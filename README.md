@@ -40,3 +40,16 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	fragColor = vec4(v,v,v,1.);
 }
 ```
+### Variations
+Every Fingerprint can be composed of up to 10 properties:
+
+1. Count - Line counter
+2. Area - %Area of fingerprint
+3. Perimeter - The length of the outside boundary of the fingerprint
+4. Ellipse Major - Primary axis of the fingerprint ellipse
+5. Minor -  Secondary axis of the fingerprint ellipse
+6. Angle - Angle is the angle between the primary axis and a line parallel to the X-axis of the fingerprint
+7. Circularity - 4π ×[Area]/[P erimeter]² with a value of 1.0 indicating a perfect circle. As the value approaches 0.0, it indicates an increasingly elongated shape
+8. Integrated density - The sum of the values of the pixels in the image fingerprint. This is equivalent to the product of Area and Mean Gray Value
+9. Skewness - The third order moment about the mean
+10. Kurtosis - The fourth order moment about the mean
