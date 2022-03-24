@@ -4,7 +4,7 @@
 This is a set of unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web 3.0 and metaverse era as digital biometric information on The Open Network.
 
 ### Algorithm for generating basic rings using a noise texture
-```
+```glsl
 vec2 hash2( vec2 p )
 {
 	p = vec2( dot(p,vec2(63.31,127.63)), dot(p,vec2(395.467,213.799)) );
@@ -57,7 +57,7 @@ Every Fingerprint can be composed of up to 10 properties:
 ### Metadata
 SVG files include:
 
-```
+```xml
     <metadata>
       <rdf:RDF
            xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
