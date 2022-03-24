@@ -49,7 +49,33 @@ Every Fingerprint can be composed of up to 10 properties:
 4. Ellipse Major - Primary axis of the fingerprint ellipse
 5. Minor -  Secondary axis of the fingerprint ellipse
 6. Angle - Angle is the angle between the primary axis and a line parallel to the X-axis of the fingerprint
-7. Circularity - 4π ×[Area]/[P erimeter]² with a value of 1.0 indicating a perfect circle. As the value approaches 0.0, it indicates an increasingly elongated shape
+7. Circularity - 4π ×[Area]/[Perimeter]² with a value of 1.0 indicating a perfect circle. As the value approaches 0.0, it indicates an increasingly elongated shape
 8. Integrated density - The sum of the values of the pixels in the image fingerprint. This is equivalent to the product of Area and Mean Gray Value
 9. Skewness - The third order moment about the mean
 10. Kurtosis - The fourth order moment about the mean
+
+### Metadata
+SVG files include:
+
+```
+    <metadata>
+      <rdf:RDF
+           xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:rdfs = "http://www.w3.org/2000/01/rdf-schema#"
+           xmlns:dc = "http://purl.org/dc/elements/1.1/" >
+        <rdf:Description about="https://nft.mir.one"
+             dc:title="NFT TON Fingerprints"
+             dc:description="This is a set of unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web 3.0 and metaverse era as digital biometric information."
+             dc:publisher="MIR | Machine Intelligence Research"
+             dc:date="2022-02-22"
+             dc:format="image/svg+xml"
+             dc:language="en" >
+          <dc:creator>
+            <rdf:Bag>
+              <rdf:li>Roman Inozemtsev</rdf:li>
+            </rdf:Bag>
+          </dc:creator>
+        </rdf:Description>
+      </rdf:RDF>
+    </metadata>
+```
