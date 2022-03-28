@@ -1,0 +1,44 @@
+{
+    "attributes": [
+        {
+          "trait_type": "Count", 
+          "value": 1
+        }, 
+        {
+          "trait_type": "Area", 
+          "value": 2
+        }, 
+        {
+          "trait_type": "Perimeter", 
+          "value": 3
+        }, 
+        {
+          "trait_type": "Major", 
+          "value": 4
+        }, 
+        {
+          "trait_type": "Minor", 
+          "value": 5
+        }, 
+        {
+          "trait_type": "Angle", 
+          "value": 6
+        }, 
+        {
+          "trait_type": "Circularity", 
+          "value": 7
+        }, 
+        {
+          "trait_type": "Integrated density", 
+          "value": 8
+        }, 
+        {
+          "trait_type": "Skewness", 
+          "value": 9
+        },
+        {
+          "trait_type": "Kurtosis", 
+          "value": 10
+        }
+      ]
+    }
