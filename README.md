@@ -4,7 +4,7 @@
 This is a set of unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web 3.0 and metaverse era as digital biometric information on The Open Network.
 
 ###
-Content: ipfs://QmZzVGLM8Au7XfrysJyEoHUBKHVz7v1WuBgxEpsUyUaDGG
+Content: ipfs://bafkreidikvhz6epgy43qohc3bmqhz4rqekcvzguqebtbpgkw2qo36jr56y
 
 ```json
 {
@@ -12,7 +12,6 @@ Content: ipfs://QmZzVGLM8Au7XfrysJyEoHUBKHVz7v1WuBgxEpsUyUaDGG
   "description": "This is a collection of 10 000 unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web3 and Metaverse era as digital biometric information on The Open Network.",
   "image": "ipfs://bafkreigdf236ojpw3gyp7pgmbkfdfzok4odwpqkhvmvhpssxhujnhpqaam",
   "external_link": "https://nft.mir.one/fingerprints",
-  "seller_fee_basis_points": 500,
   "fee_recipient": "EQCjNf6y_RhVATipbgKpCBAa8h5z6mwIXv3oDY7UZRyv0w3m"
 }
 ```
