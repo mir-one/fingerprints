@@ -141,6 +141,4 @@ SVG files include:
         }
       ]
     }
-    ```
-
     
