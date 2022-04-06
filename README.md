@@ -102,7 +102,7 @@ SVG files include:
     <dc:creator>
       <rdf:Bag>
         <rdf:li>Roman Inozemtsev</rdf:li>
-				<rdf:li>https://ipfs.io/ipfs/bafkreihojxkzxvgqptb4v5xowqg7jbss3dmrttvhhlbxvwwdwbzyftbe6q</rdf:li>
+	<rdf:li>https://ipfs.io/ipfs/bafkreihojxkzxvgqptb4v5xowqg7jbss3dmrttvhhlbxvwwdwbzyftbe6q</rdf:li>
       </rdf:Bag>
     </dc:creator>
     </rdf:Description>
