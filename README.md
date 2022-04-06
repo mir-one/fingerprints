@@ -82,7 +82,7 @@ SVG files include:
     <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
     <rdf:Description about="https://nft.mir.one/fingerprints"
       dc:title="TON Fingerprints"
-      dc:description="This is a set of unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web 3.0 and metaverse era as digital biometric information."
+      dc:description="This is a unique digital fingerprint created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use it for the Web3 and Metaverse era as digital biometric information."
       dc:publisher="MIR | Machine Intelligence Research"
       dc:date="2022-02-22"
       dc:format="image/svg+xml"
@@ -90,6 +90,7 @@ SVG files include:
     <dc:creator>
       <rdf:Bag>
         <rdf:li>Roman Inozemtsev</rdf:li>
+				<rdf:li>https://ipfs.io/ipfs/bafkreihojxkzxvgqptb4v5xowqg7jbss3dmrttvhhlbxvwwdwbzyftbe6q</rdf:li>
       </rdf:Bag>
     </dc:creator>
     </rdf:Description>
