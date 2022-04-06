@@ -3,6 +3,18 @@
 # TON Fingerprints
 This is a set of unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web 3.0 and metaverse era as digital biometric information on The Open Network.
 
+## Owner list
+If nft has owner address on presale stage - it will be minted with that owner, if not it will be minted with minter as owner.
+List [here](nfts.csv)
+
+Example:
+```
+0
+1
+2,EQCr1U4EVmSWpx2sunO1jhtHveatorjfDpttMCCkoa0JyD1P
+```
+This will create 3 NFTs. NFTs with index `0` and `1` will be owned by you wallet, while NFT with index `2` will be owned by `EQCr1U4EVmSWpx2sunO1jhtHveatorjfDpttMCCkoa0JyD1P`
+
 ###
 Content: ipfs://bafkreidikvhz6epgy43qohc3bmqhz4rqekcvzguqebtbpgkw2qo36jr56y
 
