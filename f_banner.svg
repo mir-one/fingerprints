@@ -7,6 +7,30 @@
     <rect x="2079.7087" y="-1772.8665" width="3630.9668" height="1687.6324" id="rect10318-4-4-9" />
     <rect x="2079.7087" y="-1772.8665" width="3630.9668" height="1687.6324" id="rect16706-3-6" />
   </defs>
+  <metadata>
+  <rdf:RDF
+    xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs = "http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dc = "http://purl.org/dc/elements/1.1/"
+    xmlns:cc = "http://creativecommons.org/ns#">
+    <cc:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/deed.en"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <rdf:Description about="https://nft.mir.one/fingerprints"
+      dc:title="TON Fingerprints"
+      dc:description="This is a unique digital fingerprint created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use it for the Web3 and Metaverse era as digital biometric information."
+      dc:publisher="MIR | Machine Intelligence Research"
+      dc:date="2022-02-22"
+      dc:format="image/svg+xml"
+      dc:language="en" >
+    <dc:creator>
+      <rdf:Bag>
+        <rdf:li>Roman Inozemtsev</rdf:li>
+	<rdf:li>https://ipfs.io/ipfs/bafkreihojxkzxvgqptb4v5xowqg7jbss3dmrttvhhlbxvwwdwbzyftbe6q</rdf:li>
+      </rdf:Bag>
+    </dc:creator>
+    </rdf:Description>
+  </rdf:RDF>
+</metadata>
   <g inkscape:label="Слой 1" inkscape:groupmode="layer" id="layer1" transform="translate(282.49161,-11.69045)">
     <path id="rect945" style="fill:#1b1f23;fill-rule:evenodd;stroke-width:0.204796;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000" d="M -282.49161,11.69045 H 378.96671 V 187.63837 H -282.49161 Z" />
     <g id="g100945" transform="matrix(0.57942001,0,0,0.57942001,990.77763,986.37283)" style="opacity:0.5">
