@@ -109,7 +109,9 @@ SVG files include:
   </rdf:RDF>
 </metadata>
 ```
-
+### License
+1. CC0
+2. Universal NFT License
 ### Attribution
 
 ```json
