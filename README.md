@@ -11,7 +11,7 @@ Example:
 ```
 0
 1
-2,EQCr1U4EVmSWpx2sunO1jhtHveatorjfDpttMCCkoa0JyD1P
+2,EQCjNf6y_RhVATipbgKpCBAa8h5z6mwIXv3oDY7UZRyv0w3m
 ```
 This will create 3 NFTs. NFTs with index `0` and `1` will be owned by you wallet, while NFT with index `2` will be owned by `EQCr1U4EVmSWpx2sunO1jhtHveatorjfDpttMCCkoa0JyD1P`
 
