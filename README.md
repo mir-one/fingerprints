@@ -159,4 +159,3 @@ SVG files include:
         }
       ]
     }
-    
