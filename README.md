@@ -101,8 +101,8 @@ SVG files include:
       dc:language="en" >
     <dc:creator>
       <rdf:Bag>
-        <rdf:li>Roman Inozemtsev</rdf:li>
-	<rdf:li>https://ipfs.io/ipfs/bafkreihojxkzxvgqptb4v5xowqg7jbss3dmrttvhhlbxvwwdwbzyftbe6q</rdf:li>
+        <rdf:li>EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU</rdf:li>
+        <rdf:li>https://ipfs.io/ipfs/bafkreiay6blazeqosvbtmrugmo77nzalroek7js5fiqe2iwo4jvlx5pnfa</rdf:li>
       </rdf:Bag>
     </dc:creator>
     </rdf:Description>
