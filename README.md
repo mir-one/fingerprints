@@ -15,7 +15,7 @@ Example:
 ```
 This will create 3 NFTs. NFTs with index `0` and `1` will be owned by you wallet, while NFT with index `2` will be owned by `EQCjNf6y_RhVATipbgKpCBAa8h5z6mwIXv3oDY7UZRyv0w3m`
 
-###
+# Collection
 Content: ipfs://bafkreidikvhz6epgy43qohc3bmqhz4rqekcvzguqebtbpgkw2qo36jr56y
 
 ```json
@@ -28,8 +28,8 @@ Content: ipfs://bafkreidikvhz6epgy43qohc3bmqhz4rqekcvzguqebtbpgkw2qo36jr56y
 }
 ```
 
+## Algorithm for generating basic rings using a noise texture
 
-### Algorithm for generating basic rings using a noise texture
 ```glsl
 vec2 hash2( vec2 p )
 {
