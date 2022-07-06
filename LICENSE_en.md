@@ -6,13 +6,13 @@ I. NON FUNGIBLE TOKEN DETAILS
 
 Title: NFT License and Terms of Use
 
-Creator: Roman Inozemtsev
+Creator: EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU
 
 Royalty Rate: 10%
 
 II. CREATOR PLEDGE
 
-I, Roman Inozemtsev, certify that I am the original Creator of both the NFT packaged with this document and the associated original piece of media which the token represents (the "work"). I further certify that at the dated time of this NFT's creation, I possess all necessary rights to the work to issue the associated NFT and to create the licenses and terms explained in this document. I pledge that I shall create no further NFT or materially identical cryptographic instrument representing this same work without the written consent of the present owner, and agree that the present owner of the NFT may publicly state their ownership of the NFT and my association with its creation, as well as my association with and creation of the associated work. I enter into these terms freely and willingly and pledge to uphold them to the reasonable extent of my ability.
+I, EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU, certify that I am the original Creator of both the NFT packaged with this document and the associated original piece of media which the token represents (the "work"). I further certify that at the dated time of this NFT's creation, I possess all necessary rights to the work to issue the associated NFT and to create the licenses and terms explained in this document. I pledge that I shall create no further NFT or materially identical cryptographic instrument representing this same work without the written consent of the present owner, and agree that the present owner of the NFT may publicly state their ownership of the NFT and my association with its creation, as well as my association with and creation of the associated work. I enter into these terms freely and willingly and pledge to uphold them to the reasonable extent of my ability.
 
 III. CREATOR COVENANTS
 
