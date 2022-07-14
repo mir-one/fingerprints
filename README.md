@@ -102,7 +102,7 @@ SVG files include:
     <dc:creator>
       <rdf:Bag>
         <rdf:li>EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU</rdf:li>
-        <rdf:li>https://ipfs.io/ipfs/bafkreiay6blazeqosvbtmrugmo77nzalroek7js5fiqe2iwo4jvlx5pnfa</rdf:li>
+        <rdf:li>ipfs://bafkreihj7iub3fhmhq6jn62noukt5wxn3gv6bvcg7wmt6ywvlurefezckq</rdf:li>
       </rdf:Bag>
     </dc:creator>
     </rdf:Description>
