@@ -4,7 +4,7 @@
 
 I. СВЕДЕНИЯ О NFT
 
-Название: Лицензия и условия использования NFT
+Название: Лицензия и условия использования NFT TON Fingerprints
 
 Создатель: EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU
 

@@ -4,7 +4,7 @@ This document defines the terms and conditions associated with the packaged non-
 
 I. NON FUNGIBLE TOKEN DETAILS
 
-Title: NFT License and Terms of Use
+Title: NFT License and Terms of Use TON Fingerprints
 
 Creator: EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU
 
