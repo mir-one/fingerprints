@@ -99,12 +99,12 @@ SVG files include:
       dc:date="2022-02-22"
       dc:format="image/svg+xml"
       dc:language="en" >
-    <dc:creator>
+      <dc:creator>
       <rdf:Bag>
         <rdf:li>EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU</rdf:li>
         <rdf:li>ipfs://bafkreihj7iub3fhmhq6jn62noukt5wxn3gv6bvcg7wmt6ywvlurefezckq</rdf:li>
       </rdf:Bag>
-    </dc:creator>
+      </dc:creator>
     </rdf:Description>
   </rdf:RDF>
 </metadata>
