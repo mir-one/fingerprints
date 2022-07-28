@@ -1,0 +1,52 @@
+() recv_internal(int msg_value, cell in_msg_cell, slice in_msg) impure {
+
+    ;; Prepare message context
+    var cs = in_msg_cell.begin_parse();
+    var flags = cs~load_uint(4);  ;; int_msg_info$0 ihr_disabled:Bool bounce:Bool bounced:Bool
+    slice s_addr = cs~load_msg_addr();
+    (int sender_wc, slice sender_addr) = parse_var_addr(s_addr);
+
+    ;; Bounced
+    ;; DAO accepts all bounced messages in case of invalid 
+    ;; message was sent by DAO
+    if (flags & 1) {
+        return ();
+    }
+
+    ;; Ignore messages from non-workchain
+    if (sender_wc != 0) {
+        return ();
+    }
+
+    ;; Load base data
+    int member = sender_addr~load_uint(256);
+    load_base_data();
+
+    ;; Ignore invalid operations
+    if (in_msg.slice_bits() < (32 + 64)) {
+        return ();
+    }
+
+    ;; Parse operation
+    int op = in_msg~load_uint(32);
+    int query_id = in_msg~load_uint(64);
+    if (op == op::proposal()) {
+        op_proposal(member, msg_value, in_msg, query_id);
+        return ();
+    }
+    if (op == op::vote()) {
+        op_vote(member, msg_value, in_msg, query_id);
+        return ();
+    }
+    if (op == op::execute()) {
+        op_execute(member, msg_value, in_msg, query_id);
+        return ();
+    }
+    if (op == op::abort()) {
+        op_abort(member, msg_value, in_msg, query_id);
+        return ();
+    }
+
+    ;; Ignore all invalid operations since DAO could vote to return coins to sender
+    return ();
+}
