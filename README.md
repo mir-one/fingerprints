@@ -9,6 +9,12 @@ This is a set of unique digital fingerprints created based on the algorithm for 
 
 ![img](/fingerprints.ton.png)
 
+TON DNS is a service that allows users to assign a human-readable name to crypto wallets, smart contracts, and websites. With TON DNS, access to decentralized services is analogous to access to websites on the internet.
+
+[TON DNS](https://telegra.ph/TON-DNS-06-30)
+
+[TON Sites, TON WWW, and TON Proxy](https://telegra.ph/TON-Sites-TON-WWW-and-TON-Proxy-09-29-2)
+
 ## Histogram
 ## Owner list
 If nft has owner address on presale stage - it will be minted with that owner, if not it will be minted with minter as owner.
