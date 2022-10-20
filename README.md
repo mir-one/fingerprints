@@ -11,6 +11,23 @@ This is a set of unique digital fingerprints created based on the algorithm for 
 
 TON DNS is a service that allows users to assign a human-readable name to crypto wallets, smart contracts, and websites. With TON DNS, access to decentralized services is analogous to access to websites on the internet.
 
+## Public entry proxies
+
+For familiarization with TON Sites you can use one of the public entry proxies:
+
+* **in1.ton.org** port 8080
+* **in2.ton.org** port 8080
+* **in3.ton.org** port 8080
+
+You can set them in the settings of a regular browser as HTTP proxy server.
+
+[TON DOCS](https://ton.org/docs/#/web3/sites-and-proxy)
+
+[TON DNS](https://telegra.ph/TON-DNS-06-30)
+
+[TON Sites, TON WWW, and TON Proxy](https://telegra.ph/TON-Sites-TON-WWW-and-TON-Proxy-09-29-2)
+
+## TON Site
 ```bash
 fingerprints@ton:~$
 
@@ -51,12 +68,18 @@ cmake --build . --target tonlib-cli
 cmake --build . --target rldp-http-proxy
 cmake --build . --target generate-random-id
 
-ADNL
+```
+
+```bash
+fingerprints@ton:~$
 cd /root/TON
 mkdir keyring
 cd keyring
 /root/TON/build/utils/generate-random-id -m adnlid
+```
+Copy key + adnlid
 
+```bash
 echo "adnl: "  
 read adnl_address
 
@@ -66,11 +89,6 @@ read ip_address_host
 cd /root/TON
 /root/TON/build/rldp-http-proxy/rldp-http-proxy -p 8080 -a $ip_address_host:3333 -A $adnl_address -L '*' -C /root/TON/build/global.config.json --verbosity 3
 ```
-
-
-[TON DNS](https://telegra.ph/TON-DNS-06-30)
-
-[TON Sites, TON WWW, and TON Proxy](https://telegra.ph/TON-Sites-TON-WWW-and-TON-Proxy-09-29-2)
 
 ## Histogram
 ## Owner list
@@ -230,3 +248,10 @@ SVG files include:
       ]
     }
 
+```
+
+# Donation
+
+Jetton Donation
+
+EQDEcJlTPBymzUqOJ15QR44vIlPIHhsWllrIafWpPdeHiuNR
