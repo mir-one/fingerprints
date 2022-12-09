@@ -252,6 +252,9 @@ SVG files include:
 
 # Donation
 
+[Fingerprints.ton](https://tonapi.io/account/EQCjNf6y_RhVATipbgKpCBAa8h5z6mwIXv3oDY7UZRyv0w3m)
+
+
 Jetton Donation
 
-EQDEcJlTPBymzUqOJ15QR44vIlPIHhsWllrIafWpPdeHiuNR
+[EQDEcJlTPBymzUqOJ15QR44vIlPIHhsWllrIafWpPdeHiuNR](https://tonapi.io/account/EQDEcJlTPBymzUqOJ15QR44vIlPIHhsWllrIafWpPdeHiuNR)
