@@ -1,0 +1,324 @@
+.accent-bg-mixin {
+  color: #fff;
+  background-color: #2188ff;
+}
+.accent-gradient .accent-bg-mixin {
+  background: #2188ff;
+  background: -webkit-linear-gradient();
+  background: linear-gradient();
+}
+.solid-bg-mixin {
+  background-color: #f7f7f7;
+}
+.header-color {
+  color: #303757;
+}
+.dt-mega-parent .sidebar-content .widget .header-color {
+  color: #333333;
+}
+#main .sidebar-content .header-color {
+  color: #303757;
+}
+.footer .header-color {
+  color: #ffffff;
+}
+.color-base-transparent {
+  color: #2188ff;
+}
+.sidebar-content .color-base-transparent {
+  color: rgba(48,55,87,0.5);
+}
+.footer .color-base-transparent {
+  color: rgba(133,134,140,0.5);
+}
+.outline-element-decoration .outline-decoration {
+  -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0);
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0);
+}
+.shadow-element-decoration .shadow-decoration {
+  -webkit-box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+.testimonial-item:not(.testimonial-item-slider),
+.testimonial-item .ts-viewport,
+.bg-on.team-container,
+.dt-team-shortcode.content-bg-on .team-container {
+  background-color: #f7f7f7;
+}
+.outline-element-decoration .testimonial-item:not(.testimonial-item-slider),
+.outline-element-decoration .testimonial-item .ts-viewport,
+.outline-element-decoration .bg-on.team-container,
+.outline-element-decoration .dt-team-shortcode.content-bg-on .team-container {
+  -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0);
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0);
+}
+.shadow-element-decoration .testimonial-item:not(.testimonial-item-slider),
+.shadow-element-decoration .testimonial-item .ts-viewport,
+.shadow-element-decoration .bg-on.team-container,
+.shadow-element-decoration .dt-team-shortcode.content-bg-on .team-container {
+  -webkit-box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+.dt-team-shortcode .team-content {
+  font-size: 15px;
+  line-height: 1.5em;
+}
+.testimonial-item .testimonial-vcard .text-secondary,
+.testimonial-item .testimonial-vcard .text-primary,
+.testimonial-item .testimonial-vcard .text-primary * {
+  color: #303757;
+}
+.sidebar-content .testimonial-item .testimonial-vcard .text-secondary,
+.sidebar-content .testimonial-item .testimonial-vcard .text-primary,
+.sidebar-content .testimonial-item .testimonial-vcard .text-primary * {
+  color: #303757;
+}
+.footer .testimonial-item .testimonial-vcard .text-secondary,
+.footer .testimonial-item .testimonial-vcard .text-primary,
+.footer .testimonial-item .testimonial-vcard .text-primary * {
+  color: #ffffff;
+}
+.testimonial-item .testimonial-vcard a.text-primary:hover,
+.testimonial-item .testimonial-vcard a.text-primary:hover * {
+  text-decoration: underline;
+}
+.team-author p {
+  color: #303757;
+  font:   900  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+}
+.dt-team-shortcode .team-author p {
+  font:     / 1.6em "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+  color: #2188ff;
+}
+.accent-gradient .dt-team-shortcode .team-author p {
+  background: -webkit-linear-gradient();
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@media all and (-ms-high-contrast: none) {
+  .accent-gradient .dt-team-shortcode .team-author p {
+    color: #2188ff;
+  }
+}
+.dt-mega-parent .sidebar-content .widget .team-author p {
+  font:    13px / 20px "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+  color: rgba(51,51,51,0.5);
+}
+.sidebar-content .team-author p {
+  font:    13px / 20px "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+  color: rgba(48,55,87,0.5);
+}
+.footer .team-author p {
+  font:    13px / 20px "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+  color: rgba(133,134,140,0.5);
+}
+.testimonial-vcard .text-secondary {
+  color: #303757;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+.dt-mega-parent .sidebar-content .widget .testimonial-vcard .text-secondary {
+  color: #333333;
+}
+#main .sidebar-content .testimonial-vcard .text-secondary {
+  color: #303757;
+}
+.footer .testimonial-vcard .text-secondary {
+  color: #ffffff;
+}
+#main .sidebar-content .widget .testimonial-vcard .text-secondary {
+  color: rgba(48,55,87,0.5);
+}
+.dt-testimonials-shortcode .testimonial-vcard .text-secondary {
+  font-size: 15px;
+  line-height: 1.5em;
+  font-weight: normal;
+  color: #2188ff;
+}
+.accent-gradient .dt-testimonials-shortcode .testimonial-vcard .text-secondary {
+  background: -webkit-linear-gradient();
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@media all and (-ms-high-contrast: none) {
+  .accent-gradient .dt-testimonials-shortcode .testimonial-vcard .text-secondary {
+    color: #2188ff;
+  }
+}
+.dt-testimonials-shortcode .more-link {
+  color: #2188ff;
+}
+.testimonial-vcard .text-primary {
+  color: #303757;
+  font-size: 15px;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+.dt-mega-parent .sidebar-content .widget .testimonial-vcard .text-primary {
+  color: #333333;
+}
+#main .sidebar-content .testimonial-vcard .text-primary {
+  color: #303757;
+}
+.footer .testimonial-vcard .text-primary {
+  color: #ffffff;
+}
+.testimonial-vcard .text-primary * {
+  color: #303757;
+}
+.dt-mega-parent .sidebar-content .widget .testimonial-vcard .text-primary * {
+  color: #333333;
+}
+#main .sidebar-content .testimonial-vcard .text-primary * {
+  color: #303757;
+}
+.footer .testimonial-vcard .text-primary * {
+  color: #ffffff;
+}
+.dt-testimonials-shortcode .testimonial-vcard .text-primary {
+  font: normal  normal  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+}
+.team-author-name,
+.team-author-name a {
+  color: #303757;
+  font: normal  normal  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+}
+.content .team-author-name a:hover {
+  color: #2188ff;
+}
+.accent-gradient .content .team-author-name a:hover {
+  background: -webkit-linear-gradient();
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@media all and (-ms-high-contrast: none) {
+  .accent-gradient .content .team-author-name a:hover {
+    color: #2188ff;
+  }
+}
+.widget .team-author-name,
+.widget .team-author-name a {
+  font:   900  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+  color: #303757;
+}
+.dt-mega-parent .sidebar-content .widget .widget .team-author-name,
+.dt-mega-parent .sidebar-content .widget .widget .team-author-name a {
+  color: #333333;
+}
+#main .sidebar-content .widget .team-author-name,
+#main .sidebar-content .widget .team-author-name a {
+  color: #303757;
+}
+.footer .widget .team-author-name,
+.footer .widget .team-author-name a {
+  color: #ffffff;
+}
+.team-author-name,
+.team-author-name a {
+  color: #303757;
+}
+.dt-mega-parent .sidebar-content .widget .team-author-name,
+.dt-mega-parent .sidebar-content .widget .team-author-name a {
+  color: #333333;
+}
+#main .sidebar-content .team-author-name,
+#main .sidebar-content .team-author-name a {
+  color: #303757;
+}
+.footer .team-author-name,
+.footer .team-author-name a {
+  color: #ffffff;
+}
+.rsTitle {
+  font:   900  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+}
+.rsDesc {
+  font:   900  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+}
+@media screen and (max-width: 1200px) {
+  .rsTitle {
+    font:   900  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  }
+  .rsDesc {
+    font:   900  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .rsTitle {
+    font:   900  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  }
+  .rsDesc {
+    font:   900  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  }
+}
+@media screen and (max-width: 800px) {
+  .rsTitle {
+    font:   900  /  "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  }
+  .rsDesc {
+    font:    15px / 1.5em "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  }
+}
+@media screen and (max-width: 320px) {
+  .rsTitle {
+    font:    15px / 1.5em "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  }
+  .rsDesc {
+    display: none !important;
+    font:    15px / 1.5em "Mulish", Helvetica, Arial, Verdana, sans-serif;
+  }
+}
+#main-slideshow .progress-spinner-left,
+#main-slideshow .progress-spinner-right {
+  border-color: #2188ff !important;
+}
+.slider-content .owl-dot:not(.active):not(:hover),
+.slider-content .owl-dot:not(.active):hover {
+  -webkit-box-shadow: inset 0 0 0 2px rgba(48,55,87,0.35);
+  box-shadow: inset 0 0 0 2px rgba(48,55,87,0.35);
+}
+.slider-content .owl-dot.active {
+  -webkit-box-shadow: inset 0 0 0 20px rgba(48,55,87,0.35);
+  box-shadow: inset 0 0 0 20px rgba(48,55,87,0.35);
+}
+.dt-mega-parent .sidebar-content .widget .slider-content .owl-dot:not(.active):not(:hover),
+.dt-mega-parent .sidebar-content .widget .slider-content .owl-dot:not(.active):hover {
+  -webkit-box-shadow: inset 0 0 0 2px rgba(51,51,51,0.35);
+  box-shadow: inset 0 0 0 2px rgba(51,51,51,0.35);
+}
+.dt-mega-parent .sidebar-content .widget .slider-content .owl-dot.active {
+  -webkit-box-shadow: inset 0 0 0 20px rgba(51,51,51,0.35);
+  box-shadow: inset 0 0 0 20px rgba(51,51,51,0.35);
+}
+.sidebar .slider-content .owl-dot:not(.active):not(:hover),
+.sidebar .slider-content .owl-dot:not(.active):hover,
+.sidebar-content .slider-content .owl-dot:not(.active):not(:hover),
+.sidebar-content .slider-content .owl-dot:not(.active):hover {
+  -webkit-box-shadow: inset 0 0 0 2px rgba(48,55,87,0.35);
+  box-shadow: inset 0 0 0 2px rgba(48,55,87,0.35);
+}
+.sidebar .slider-content .owl-dot.active,
+.sidebar-content .slider-content .owl-dot.active {
+  -webkit-box-shadow: inset 0 0 0 20px rgba(48,55,87,0.35);
+  box-shadow: inset 0 0 0 20px rgba(48,55,87,0.35);
+}
+.footer .slider-content .owl-dot:not(.active):not(:hover),
+.footer .slider-content .owl-dot:not(.active):hover {
+  -webkit-box-shadow: inset 0 0 0 2px rgba(133,134,140,0.35);
+  box-shadow: inset 0 0 0 2px rgba(133,134,140,0.35);
+}
+.footer .slider-content .owl-dot.active {
+  -webkit-box-shadow: inset 0 0 0 20px rgba(133,134,140,0.35);
+  box-shadow: inset 0 0 0 20px rgba(133,134,140,0.35);
+}
