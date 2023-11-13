@@ -1,0 +1,17 @@
+{
+  "name": "TON Fingerprints",
+  "description": "This is a collection of 10 000 unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web3 and Metaverse era as digital biometric information on The Open Network.",
+  "image": "https://raw.githubusercontent.com/mir-one/fingerprints/main/logo.gif",
+  "external_url": "http://fingerprints.ton",
+  "external_link": "http://fingerprints.ton",
+  "social_links": [
+    "https://ton.vote/EQD1PIvZLeDmgICYjkzEbvyIZRWNQNS6izrxQJuoXZk_uF2y",
+    "http://fingerprints.ton",
+    "https://github.com/mir-one/fingerprints",
+    "https://nft.mir.one/fingerprints",
+    "https://t.me/ton_fingerprints",
+    "https://t.me/ton_fingerprints_ru",
+    "https://t.me/ton_mir_bot"
+  ],
+  "cover_image": "https://raw.githubusercontent.com/mir-one/fingerprints/main/cover.png"
+}
