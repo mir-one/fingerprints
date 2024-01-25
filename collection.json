@@ -1,10 +1,12 @@
 {
   "name": "TON Fingerprints",
-  "description": "This is a collection of 10 000 unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web3 and Metaverse era as digital biometric information on The Open Network.",
+  "description": "This is a collection of 10 000 unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web3 and Metaverse era as digital biometric information on The Open Network.\n CC0 License: This collection has been marked as dedicated to the public domain.\n By marking the work with a CC0 public domain dedication, the creator is giving up their copyright and allowing reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes.",
   "image": "https://raw.githubusercontent.com/mir-one/fingerprints/main/logo.gif",
   "external_url": "http://fingerprints.ton",
   "external_link": "http://fingerprints.ton",
   "social_links": [
+    "https://t.me/fingerprint_scanner_bot",
+    "https://t.me/dao_verify_bot",
     "https://ton.vote/EQD1PIvZLeDmgICYjkzEbvyIZRWNQNS6izrxQJuoXZk_uF2y",
     "http://fingerprints.ton",
     "https://github.com/mir-one/fingerprints",
