@@ -216,7 +216,6 @@ Open [Fingerprint Scanner](https://t.me/fingerprint_scanner_bot/scan)
 |-|-|-|-|
 |![image](https://github.com/mir-one/fingerprints/assets/24755187/d1a6cfc4-51ef-4835-8361-0119a00f186e) |![image](https://github.com/mir-one/fingerprints/assets/24755187/24385c99-c42c-4b0b-9d5e-e4ff4d1f215c) |![image](https://github.com/mir-one/fingerprints/assets/24755187/457bae64-1307-491e-a72d-a1468f2181a0) | ![image](https://github.com/mir-one/fingerprints/assets/24755187/b6d4bff2-c94d-472e-a138-c45533ace73f) |
 
-
 FS is an exciting WebApp in which you have to scan digital fingerprints and earn bulbs and keys. Using an incredibly accurate scanner, your task is to recognize and collect fingerprints in order to get the maximum amount of game resources.
 
 The main feature of the game is the motivation of players through the achievement standings. You will be able to compete with other players, comparing your results and rising in the ranking. Be the best and become the real masters of fingerprint scanning!
@@ -227,10 +226,16 @@ Immerse yourself in the fascinating world of fingerprint scanning, compete with 
 
 #### Level system
 
+![alt text](image.png)
+
+The leveling system is the independent progression system in which players earn XP (Experience Points) at the end of a completed scanning and is displayed in the upper left corner of the main menu.
+
 ```typescript
 export const getXpForNextLevel = (currentLevel: number) =>
   currentLevel ** 2 + currentLevel + 33;
 ```
+
+![xp](XP%20vs%20_Level_.png)
 
 This is a function that calculates the amount of experience needed to reach the next level in a game or progress system. The function takes the current level (as a number) and uses it to calculate the required experience.
 
@@ -243,6 +248,12 @@ The mathematical expression `currentLevel ** 2 + currentLevel + 33` is used insi
 3. `33` is a constant value that is added to the result of the first two parts of the expression. It may represent some basic need for experience or an additional reward for reaching the next level.
 
 As a result, the function returns the total amount of experience needed to reach the next level, based on the current level.
+
+Example:
+
+- 1 Lelel = 35 XP (Experience Points)
+- 50 Level = 2583 XP
+- 100 Level = 10133 XP
 
 #### Weighted Random
 
