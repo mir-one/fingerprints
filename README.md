@@ -1,8 +1,8 @@
-![cover](/tf_cover_rev2023v.png)
-
 # TON Fingerprints
 
-This is a set of unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web 3.0 and metaverse era as digital biometric information on The Open Network.
+![cover](/banner.png)
+
+This is a NFT Collection of unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web 3.0 and metaverse era as digital biometric information on The Open Network.
 
 ## Domain fingerprints.ton
 
@@ -93,7 +93,46 @@ cd /root/TON
 /root/TON/build/rldp-http-proxy/rldp-http-proxy -p 8080 -a $ip_address_host:3333 -A $adnl_address -L '*' -C /root/TON/build/global.config.json --verbosity 3
 ```
 
-## Histogram
+## 📊 Histogram
+
+| ![Genesys](Genesis.png) | ![Count](<Count%20lines%20_Amount_,%20era%20Genesis%20(red).png>) |
+| ----------------------- | ----------------------------------------------------------------- |
+| ![Array](Array.png)     | ![Era](/Era%20Genesis_Rarity%20vs%20_Era%20Genesis_Lines_.png)    |
+
+### Rarity name
+
+| Amount | Counter | Rarity | Price   | Category       |
+| ------ | ------- | ------ | ------- | -------------- |
+| 2351   | 15      | 23,51% | 0,822   | Common         |
+| 1597   | 16      | 15,97% | 0,826   | Infrequent     |
+| 1453   | 14      | 14,53% | 1,010   | Extraordinary  |
+| 987    | 17      | 9,87%  | 1,026   | Specialized    |
+| 898    | 13      | 8,98%  | 1,029   | Quirky         |
+| 610    | 18      | 6,10%  | 1,111   | Unheard        |
+| 377    | 19      | 3,77%  | 1,404   | Inimitable     |
+| 343    | 12      | 3,43%  | 1,745   | Unconventional |
+| 238    | 11      | 2,38%  | 1,872   | Uncommonplace  |
+| 233    | 20      | 2,33%  | 1,937   | Unparalleled   |
+| 212    | 10      | 2,12%  | 2,074   | Remarkable     |
+| 144    | 21      | 1,44%  | 2,357   | Rarefied       |
+| 131    | 9       | 1,31%  | 3,471   | Outstanding    |
+| 89     | 22      | 0,89%  | 3,932   | Abnormal       |
+| 81     | 8       | 0,81%  | 5,248   | Curious        |
+| 55     | 23      | 0,55%  | 5,748   | Exceptionable  |
+| 50     | 7       | 0,50%  | 10,770  | Peculiar       |
+| 34     | 24      | 0,34%  | 10,889  | Unmatched      |
+| 31     | 6       | 0,31%  | 16,293  | Distinctive    |
+| 21     | 25      | 0,21%  | 27,678  | Precious       |
+| 19     | 5       | 0,19%  | 36,937  | Exclusive      |
+| 13     | 26      | 0,13%  | 49,900  | Unprecedented  |
+| 12     | 4       | 0,12%  | 76,823  | Singular       |
+| 8      | 27      | 0,08%  | 90,809  | Unusual        |
+| 7      | 3       | 0,07%  | 142,757 | Exceptional    |
+| 2      | 28      | 0,02%  | 166,567 | Amazing        |
+| 1      | 1       | 0,01%  | 249,900 | Scarce         |
+| 1      | 2       | 0,01%  | 249,900 | Uncommon       |
+| 1      | 29      | 0,01%  | 249,900 | Rare           |
+| 1      | 30      | 0,01%  | 249,900 | Unique         |
 
 ## Owner list
 
@@ -102,7 +141,7 @@ List [here](nfts.csv)
 
 Example:
 
-```
+```csv
 0
 1
 2,EQCjNf6y_RhVATipbgKpCBAa8h5z6mwIXv3oDY7UZRyv0w3m
@@ -110,7 +149,7 @@ Example:
 
 This will create 3 NFTs. NFTs with index `0` and `1` will be owned by you wallet, while NFT with index `2` will be owned by `EQCjNf6y_RhVATipbgKpCBAa8h5z6mwIXv3oDY7UZRyv0w3m`
 
-# Collection
+## Collection
 
 Content: ipfs://bafkreidikvhz6epgy43qohc3bmqhz4rqekcvzguqebtbpgkw2qo36jr56y
 
@@ -211,7 +250,7 @@ SVG files include:
 
 ### Scan
 
-Open [Fingerprint Scanner](https://t.me/fingerprint_scanner_bot/scan)
+Telegram Mini App [Fingerprint Scanner](https://t.me/fingerprint_scanner_bot/scan)
 | | | | |
 |-|-|-|-|
 |![image](https://github.com/mir-one/fingerprints/assets/24755187/d1a6cfc4-51ef-4835-8361-0119a00f186e) |![image](https://github.com/mir-one/fingerprints/assets/24755187/24385c99-c42c-4b0b-9d5e-e4ff4d1f215c) |![image](https://github.com/mir-one/fingerprints/assets/24755187/457bae64-1307-491e-a72d-a1468f2181a0) | ![image](https://github.com/mir-one/fingerprints/assets/24755187/b6d4bff2-c94d-472e-a138-c45533ace73f) |
@@ -472,7 +511,7 @@ export const scanDrop: ScanDrop[] = [
 }
 ```
 
-# Donation
+## Donation
 
 [Fingerprints.ton](https://tonapi.io/account/EQCjNf6y_RhVATipbgKpCBAa8h5z6mwIXv3oDY7UZRyv0w3m)
 
