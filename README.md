@@ -4,6 +4,42 @@
 
 This is a NFT Collection of unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web 3.0 and metaverse era as digital biometric information on The Open Network.
 
+## Browser Extension
+
+### Step 1
+
+Google Chrome: Please navigate to [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?utm_source=usz) and install it.
+
+![alt text](image-2.png)
+
+### Step 2
+
+Click 'Install' to install a TON Fingerprints [userscript](https://github.com/mir-one/fingerprints/releases).
+
+![alt text](image-1.png)
+
+### RRP
+
+The list price, also known as the manufacturer's suggested retail price, or the recommended retail price, or the suggested retail price of a product is the price at which its manufacturer notionally recommends that a retailer sell the product.
+
+$Price = {{AmountCollection-AmountGoup} \over Rarity}*100％$
+
+$Stage_1 = Price$
+
+$Stage_2 = {Price Stage_1 \over 3 }+ Price Stage_1$
+
+$Stage_3 = {Price Stage_2 \over 3} + Price Stage_2$
+
+$Stage_4 = {Price Stage_3 \over 3} + Price Stage_3$
+
+$Stage_5 = {Price Stage_4 \over 3} + Price Stage_4$
+
+$Stage_6 = {Price Stage_5 \over 3} + Price Stage_5$
+
+$Floor = {Price Stage_6 \over AmountGroupSale} + Price Stage_6$
+
+![alt text](image-3.png)
+
 ## Domain fingerprints.ton
 
 [fingerprints.ton](http://fingerprints.ton)
@@ -101,38 +137,38 @@ cd /root/TON
 
 ### Rarity name
 
-| Amount | Counter | Rarity | Price   | Category       |
-| ------ | ------- | ------ | ------- | -------------- |
-| 2351   | 15      | 23,51% | 0,822   | Common         |
-| 1597   | 16      | 15,97% | 0,826   | Infrequent     |
-| 1453   | 14      | 14,53% | 1,010   | Extraordinary  |
-| 987    | 17      | 9,87%  | 1,026   | Specialized    |
-| 898    | 13      | 8,98%  | 1,029   | Quirky         |
-| 610    | 18      | 6,10%  | 1,111   | Unheard        |
-| 377    | 19      | 3,77%  | 1,404   | Inimitable     |
-| 343    | 12      | 3,43%  | 1,745   | Unconventional |
-| 238    | 11      | 2,38%  | 1,872   | Uncommonplace  |
-| 233    | 20      | 2,33%  | 1,937   | Unparalleled   |
-| 212    | 10      | 2,12%  | 2,074   | Remarkable     |
-| 144    | 21      | 1,44%  | 2,357   | Rarefied       |
-| 131    | 9       | 1,31%  | 3,471   | Outstanding    |
-| 89     | 22      | 0,89%  | 3,932   | Abnormal       |
-| 81     | 8       | 0,81%  | 5,248   | Curious        |
-| 55     | 23      | 0,55%  | 5,748   | Exceptionable  |
-| 50     | 7       | 0,50%  | 10,770  | Peculiar       |
-| 34     | 24      | 0,34%  | 10,889  | Unmatched      |
-| 31     | 6       | 0,31%  | 16,293  | Distinctive    |
-| 21     | 25      | 0,21%  | 27,678  | Precious       |
-| 19     | 5       | 0,19%  | 36,937  | Exclusive      |
-| 13     | 26      | 0,13%  | 49,900  | Unprecedented  |
-| 12     | 4       | 0,12%  | 76,823  | Singular       |
-| 8      | 27      | 0,08%  | 90,809  | Unusual        |
-| 7      | 3       | 0,07%  | 142,757 | Exceptional    |
-| 2      | 28      | 0,02%  | 166,567 | Amazing        |
-| 1      | 1       | 0,01%  | 249,900 | Scarce         |
-| 1      | 2       | 0,01%  | 249,900 | Uncommon       |
-| 1      | 29      | 0,01%  | 249,900 | Rare           |
-| 1      | 30      | 0,01%  | 249,900 | Unique         |
+| Amount | Counter | Rarity | Price   | Category       | RU Category             |
+| ------ | ------- | ------ | ------- | -------------- | ----------------------- |
+| 2351   | 15      | 23,51% | 0,822   | Common         | Привлекательный         |
+| 1597   | 16      | 15,97% | 0,826   | Infrequent     | Удивительно приятный    |
+| 1453   | 14      | 14,53% | 1,010   | Extraordinary  | Необыкновенно красивый  |
+| 987    | 17      | 9,87%  | 1,026   | Specialized    | Пленительный            |
+| 898    | 13      | 8,98%  | 1,029   | Quirky         | Очаровательный          |
+| 610    | 18      | 6,10%  | 1,111   | Unheard        | Впечатляющий            |
+| 377    | 19      | 3,77%  | 1,404   | Inimitable     | Восхитительный          |
+| 343    | 12      | 3,43%  | 1,745   | Unconventional | Завораживающий          |
+| 238    | 11      | 2,38%  | 1,872   | Uncommonplace  | Удивительно ценный      |
+| 233    | 20      | 2,33%  | 1,937   | Unparalleled   | Интригующий             |
+| 212    | 10      | 2,12%  | 2,074   | Remarkable     | Необыкновенный          |
+| 144    | 21      | 1,44%  | 2,357   | Rarefied       | Прекрасный              |
+| 131    | 9       | 1,31%  | 3,471   | Outstanding    | Загадочный              |
+| 89     | 22      | 0,89%  | 3,932   | Abnormal       | Превосходный            |
+| 81     | 8       | 0,81%  | 5,248   | Curious        | Исключительный          |
+| 55     | 23      | 0,55%  | 5,748   | Exceptionable  | Чудесный                |
+| 50     | 7       | 0,50%  | 10,770  | Peculiar       | Трепетный               |
+| 34     | 24      | 0,34%  | 10,889  | Unmatched      | Уникально выразительный |
+| 31     | 6       | 0,31%  | 16,293  | Distinctive    | Удивительный            |
+| 21     | 25      | 0,21%  | 27,678  | Precious       | Особенный               |
+| 19     | 5       | 0,19%  | 36,937  | Exclusive      | Специфический           |
+| 13     | 26      | 0,13%  | 49,900  | Unprecedented  | Необычный               |
+| 12     | 4       | 0,12%  | 76,823  | Singular       | Особый                  |
+| 8      | 27      | 0,08%  | 90,809  | Unusual        | Отличительный           |
+| 7      | 3       | 0,07%  | 142,757 | Exceptional    | Неповторимый            |
+| 2      | 28      | 0,02%  | 166,567 | Amazing        | Индивидуальный          |
+| 1      | 1       | 0,01%  | 249,900 | Scarce         | Оригинальный            |
+| 1      | 2       | 0,01%  | 249,900 | Uncommon       | Эксклюзивный            |
+| 1      | 29      | 0,01%  | 249,900 | Rare           | Редкий                  |
+| 1      | 30      | 0,01%  | 249,900 | Unique         | Уникальный              |
 
 ## Owner list
 
