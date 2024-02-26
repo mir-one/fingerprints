@@ -1,0 +1,665 @@
+{
+   "name": "ProposalDeployer",
+   "types": [
+      {
+         "name": "StateInit",
+         "header": null,
+         "fields": [
+            {
+               "name": "code",
+               "type": {
+                  "kind": "simple",
+                  "type": "cell",
+                  "optional": false
+               }
+            },
+            {
+               "name": "data",
+               "type": {
+                  "kind": "simple",
+                  "type": "cell",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "Context",
+         "header": null,
+         "fields": [
+            {
+               "name": "bounced",
+               "type": {
+                  "kind": "simple",
+                  "type": "bool",
+                  "optional": false
+               }
+            },
+            {
+               "name": "sender",
+               "type": {
+                  "kind": "simple",
+                  "type": "address",
+                  "optional": false
+               }
+            },
+            {
+               "name": "value",
+               "type": {
+                  "kind": "simple",
+                  "type": "int",
+                  "optional": false,
+                  "format": 257
+               }
+            },
+            {
+               "name": "raw",
+               "type": {
+                  "kind": "simple",
+                  "type": "slice",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "SendParameters",
+         "header": null,
+         "fields": [
+            {
+               "name": "bounce",
+               "type": {
+                  "kind": "simple",
+                  "type": "bool",
+                  "optional": false
+               }
+            },
+            {
+               "name": "to",
+               "type": {
+                  "kind": "simple",
+                  "type": "address",
+                  "optional": false
+               }
+            },
+            {
+               "name": "value",
+               "type": {
+                  "kind": "simple",
+                  "type": "int",
+                  "optional": false,
+                  "format": 257
+               }
+            },
+            {
+               "name": "mode",
+               "type": {
+                  "kind": "simple",
+                  "type": "int",
+                  "optional": false,
+                  "format": 257
+               }
+            },
+            {
+               "name": "body",
+               "type": {
+                  "kind": "simple",
+                  "type": "cell",
+                  "optional": true
+               }
+            },
+            {
+               "name": "code",
+               "type": {
+                  "kind": "simple",
+                  "type": "cell",
+                  "optional": true
+               }
+            },
+            {
+               "name": "data",
+               "type": {
+                  "kind": "simple",
+                  "type": "cell",
+                  "optional": true
+               }
+            }
+         ]
+      },
+      {
+         "name": "Deploy",
+         "header": 2490013878,
+         "fields": [
+            {
+               "name": "queryId",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            }
+         ]
+      },
+      {
+         "name": "DeployOk",
+         "header": 2952335191,
+         "fields": [
+            {
+               "name": "queryId",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            }
+         ]
+      },
+      {
+         "name": "FactoryDeploy",
+         "header": 1829761339,
+         "fields": [
+            {
+               "name": "queryId",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            },
+            {
+               "name": "cashback",
+               "type": {
+                  "kind": "simple",
+                  "type": "address",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "ChangeOwner",
+         "header": 2174598809,
+         "fields": [
+            {
+               "name": "queryId",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            },
+            {
+               "name": "newOwner",
+               "type": {
+                  "kind": "simple",
+                  "type": "address",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "ChangeOwnerOk",
+         "header": 846932810,
+         "fields": [
+            {
+               "name": "queryId",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            },
+            {
+               "name": "newOwner",
+               "type": {
+                  "kind": "simple",
+                  "type": "address",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "DeployAndInitProposal",
+         "header": 1496883659,
+         "fields": [
+            {
+               "name": "body",
+               "type": {
+                  "kind": "simple",
+                  "type": "Params",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "SendProposalInit",
+         "header": 2746622614,
+         "fields": [
+            {
+               "name": "body",
+               "type": {
+                  "kind": "simple",
+                  "type": "Params",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "SendUpdateProposal",
+         "header": 2568858687,
+         "fields": [
+            {
+               "name": "proposalAddress",
+               "type": {
+                  "kind": "simple",
+                  "type": "address",
+                  "optional": false
+               }
+            },
+            {
+               "name": "updateParams",
+               "type": {
+                  "kind": "simple",
+                  "type": "Params",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "Params",
+         "header": null,
+         "fields": [
+            {
+               "name": "proposalStartTime",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            },
+            {
+               "name": "proposalEndTime",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            },
+            {
+               "name": "proposalSnapshotTime",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            },
+            {
+               "name": "votingSystem",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "votingPowerStrategies",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "title",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "description",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "quorum",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "hide",
+               "type": {
+                  "kind": "simple",
+                  "type": "bool",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "ProposalInit",
+         "header": 1008560988,
+         "fields": [
+            {
+               "name": "body",
+               "type": {
+                  "kind": "simple",
+                  "type": "Params",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "Vote",
+         "header": 2084703906,
+         "fields": [
+            {
+               "name": "comment",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "UpdateProposal",
+         "header": 817223820,
+         "fields": [
+            {
+               "name": "updateParams",
+               "type": {
+                  "kind": "simple",
+                  "type": "Params",
+                  "optional": false
+               }
+            }
+         ]
+      },
+      {
+         "name": "ProposalContractState",
+         "header": null,
+         "fields": [
+            {
+               "name": "proposalDeployer",
+               "type": {
+                  "kind": "simple",
+                  "type": "address",
+                  "optional": false
+               }
+            },
+            {
+               "name": "id",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 32
+               }
+            },
+            {
+               "name": "proposalStartTime",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            },
+            {
+               "name": "proposalEndTime",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            },
+            {
+               "name": "proposalSnapshotTime",
+               "type": {
+                  "kind": "simple",
+                  "type": "uint",
+                  "optional": false,
+                  "format": 64
+               }
+            },
+            {
+               "name": "votingSystem",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "votingPowerStrategies",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "title",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "description",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "quorum",
+               "type": {
+                  "kind": "simple",
+                  "type": "string",
+                  "optional": false
+               }
+            },
+            {
+               "name": "hide",
+               "type": {
+                  "kind": "simple",
+                  "type": "bool",
+                  "optional": false
+               }
+            }
+         ]
+      }
+   ],
+   "receivers": [
+      {
+         "receiver": "internal",
+         "message": {
+            "kind": "typed",
+            "type": "DeployAndInitProposal"
+         }
+      },
+      {
+         "receiver": "internal",
+         "message": {
+            "kind": "typed",
+            "type": "SendUpdateProposal"
+         }
+      },
+      {
+         "receiver": "internal",
+         "message": {
+            "kind": "typed",
+            "type": "Deploy"
+         }
+      }
+   ],
+   "getters": [
+      {
+         "name": "dao",
+         "arguments": [],
+         "returnType": {
+            "kind": "simple",
+            "type": "address",
+            "optional": false
+         }
+      },
+      {
+         "name": "nextProposalId",
+         "arguments": [],
+         "returnType": {
+            "kind": "simple",
+            "type": "int",
+            "optional": false,
+            "format": 257
+         }
+      },
+      {
+         "name": "proposalAddr",
+         "arguments": [
+            {
+               "name": "index",
+               "type": {
+                  "kind": "simple",
+                  "type": "int",
+                  "optional": false,
+                  "format": 257
+               }
+            }
+         ],
+         "returnType": {
+            "kind": "simple",
+            "type": "address",
+            "optional": false
+         }
+      }
+   ],
+   "errors": {
+      "2": {
+         "message": "Stack undeflow"
+      },
+      "3": {
+         "message": "Stack overflow"
+      },
+      "4": {
+         "message": "Integer overflow"
+      },
+      "5": {
+         "message": "Integer out of expected range"
+      },
+      "6": {
+         "message": "Invalid opcode"
+      },
+      "7": {
+         "message": "Type check error"
+      },
+      "8": {
+         "message": "Cell overflow"
+      },
+      "9": {
+         "message": "Cell underflow"
+      },
+      "10": {
+         "message": "Dictionary error"
+      },
+      "13": {
+         "message": "Out of gas error"
+      },
+      "32": {
+         "message": "Method ID not found"
+      },
+      "34": {
+         "message": "Action is invalid or not supported"
+      },
+      "37": {
+         "message": "Not enough TON"
+      },
+      "38": {
+         "message": "Not enough extra-currencies"
+      },
+      "128": {
+         "message": "Null reference exception"
+      },
+      "129": {
+         "message": "Invalid serialization prefix"
+      },
+      "130": {
+         "message": "Invalid incoming message"
+      },
+      "131": {
+         "message": "Constraints error"
+      },
+      "132": {
+         "message": "Access denied"
+      },
+      "133": {
+         "message": "Contract stopped"
+      },
+      "134": {
+         "message": "Invalid argument"
+      },
+      "135": {
+         "message": "Code of a contract was not found"
+      },
+      "136": {
+         "message": "Invalid address"
+      },
+      "137": {
+         "message": "Masterchain support is not enabled for this contract"
+      },
+      "2977": {
+         "message": "Already initialized"
+      },
+      "4429": {
+         "message": "Invalid sender"
+      },
+      "8923": {
+         "message": "Update proposals is possible only before start time"
+      },
+      "13403": {
+         "message": "only dao can send create proposal message"
+      },
+      "50214": {
+         "message": "only dao can send update proposal message"
+      },
+      "52334": {
+         "message": "Incative proposal"
+      },
+      "61278": {
+         "message": "Propsal was not initialized yet"
+      }
+   },
+   "interfaces": [
+      "org.ton.introspection.v0",
+      "org.ton.abi.ipfs.v0",
+      "org.ton.deploy.lazy.v0",
+      "org.ton.debug.v0",
+      "org.ton.chain.workchain.v0"
+   ]
+}

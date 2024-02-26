@@ -1,0 +1,211 @@
+#pragma version =0.4.3;
+#pragma allow-post-modification;
+#pragma compute-asm-ltr;
+
+#include "verifier_Dao.headers.fc";
+#include "verifier_Dao.stdlib.fc";
+#include "verifier_Dao.storage.fc";
+
+;;
+;; Contract Dao functions
+;;
+
+(slice, slice, slice, int, slice, int) $Dao$_contract_init(slice $registry, int $daoIndex) impure inline_ref {
+    var (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee)) = (null(), null(), null(), null(), null(), null());
+    $self'registry = $registry;
+    $self'daoIndex = $daoIndex;
+    $self'owner = __tact_create_address(0, 0);
+    $self'proposalOwner = __tact_create_address(0, 0);
+    $self'metadata = __tact_create_address(0, 0);
+    $self'fwdMsgFee = 1000000000000000;
+    return ($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee);
+}
+
+((slice, slice, slice, int, slice, int), (slice, slice, slice, slice, int, int)) $Dao$_fun_state((slice, slice, slice, int, slice, int) $self) impure inline_ref {
+    var (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee)) = $self;
+    return (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee), $DaoContractState$_constructor_registry_owner_proposalOwner_metadata_daoIndex_fwdMsgFee($self'registry, $self'owner, $self'proposalOwner, $self'metadata, $self'daoIndex, $self'fwdMsgFee));
+}
+
+;;
+;; Receivers of a Contract Dao
+;;
+
+(((slice, slice, slice, int, slice, int)), ()) $Dao$_internal_binary_DaoInit((slice, slice, slice, int, slice, int) $self, (slice, slice, slice, int) $init) impure inline {
+    var ($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee) = $self;
+    var ($init'owner, $init'proposalOwner, $init'metadata, $init'fwdMsgFee) = $init;
+    throw_unless(2977, ( __tact_slice_eq_bits(__tact_create_address(0, 0), $self'owner) ));
+    throw_unless(4429, ( __tact_slice_eq_bits($self'registry, __tact_context_get_sender()) ));
+    $self'owner = $init'owner;
+    $self'proposalOwner = $init'proposalOwner;
+    $self'metadata = $init'metadata;
+    $self'fwdMsgFee = $init'fwdMsgFee;
+    return (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee), ());
+}
+
+(((slice, slice, slice, int, slice, int)), ()) $Dao$_internal_binary_SetOwner((slice, slice, slice, int, slice, int) $self, (slice) $msg) impure inline {
+    var ($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee) = $self;
+    var ($msg'newOwner) = $msg;
+    throw_unless(4429, ( __tact_slice_eq_bits($self'owner, __tact_context_get_sender()) ));
+    $self'owner = $msg'newOwner;
+    return (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee), ());
+}
+
+(((slice, slice, slice, int, slice, int)), ()) $Dao$_internal_binary_SetProposalOwner((slice, slice, slice, int, slice, int) $self, (slice) $msg) impure inline {
+    var ($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee) = $self;
+    var ($msg'newProposalOwner) = $msg;
+    throw_unless(4429, ( __tact_slice_eq_bits($self'owner, __tact_context_get_sender()) ));
+    $self'proposalOwner = $msg'newProposalOwner;
+    return (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee), ());
+}
+
+(((slice, slice, slice, int, slice, int)), ()) $Dao$_internal_binary_SetMetadata((slice, slice, slice, int, slice, int) $self, (slice) $msg) impure inline {
+    var ($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee) = $self;
+    var ($msg'newMetadata) = $msg;
+    throw_unless(4429, ( __tact_slice_eq_bits($self'owner, __tact_context_get_sender()) ));
+    $self'metadata = $msg'newMetadata;
+    return (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee), ());
+}
+
+(((slice, slice, slice, int, slice, int)), ()) $Dao$_internal_binary_SetFwdMsgFee((slice, slice, slice, int, slice, int) $self, (int) $msg) impure inline {
+    var ($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee) = $self;
+    var ($msg'newFwdMsgFee) = $msg;
+    throw_unless(51893, ( __tact_slice_eq_bits($self'registry, __tact_context_get_sender()) ));
+    $self'fwdMsgFee = $msg'newFwdMsgFee;
+    return (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee), ());
+}
+
+(((slice, slice, slice, int, slice, int)), ()) $Dao$_internal_binary_FwdMsg((slice, slice, slice, int, slice, int) $self, ((int, slice, int, int, cell, cell, cell)) $msg) impure inline {
+    var ($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee) = $self;
+    var (($msg'fwdMsg'bounce, $msg'fwdMsg'to, $msg'fwdMsg'value, $msg'fwdMsg'mode, $msg'fwdMsg'body, $msg'fwdMsg'code, $msg'fwdMsg'data)) = $msg;
+    throw_unless(4429, ( (( __tact_slice_eq_bits($self'owner, __tact_context_get_sender()) )) ? (true) : (( __tact_slice_eq_bits($self'proposalOwner, __tact_context_get_sender()) )) ));
+    throw_unless(60173, ($Context$_get_value(__tact_context_get()) >= $self'fwdMsgFee));
+    $global_send(($msg'fwdMsg'bounce, $msg'fwdMsg'to, $msg'fwdMsg'value, $msg'fwdMsg'mode, $msg'fwdMsg'body, $msg'fwdMsg'code, $msg'fwdMsg'data));
+    return (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee), ());
+}
+
+(((slice, slice, slice, int, slice, int)), ()) $Dao$_internal_binary_Deploy((slice, slice, slice, int, slice, int) $self, (int) $deploy) impure inline {
+    var ($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee) = $self;
+    var ($deploy'queryId) = $deploy;
+    ($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee)~$Dao$_fun_notify($DeployOk$_store_cell($DeployOk$_constructor_queryId($deploy'queryId)));
+    return (($self'owner, $self'registry, $self'proposalOwner, $self'daoIndex, $self'metadata, $self'fwdMsgFee), ());
+}
+
+;;
+;; Get methods of a Contract Dao
+;;
+
+_ %state() method_id(77589) {
+    var self = $Dao$_contract_load();
+    var res = self~$Dao$_fun_state();
+    return $DaoContractState$_to_external(res);
+}
+
+_ supported_interfaces() method_id {
+    return (
+        "org.ton.introspection.v0"H >> 128,
+        "org.ton.abi.ipfs.v0"H >> 128,
+        "org.ton.deploy.lazy.v0"H >> 128,
+        "org.ton.debug.v0"H >> 128,
+        "org.ton.chain.workchain.v0"H >> 128
+    );
+}
+
+_ get_abi_ipfs() method_id {
+    return "ipfs://QmRdjfdHuQqApi5zBtSRQP9PRaqDyYZ3mXxk8Vc1zpMDJn";
+}
+
+_ lazy_deployment_completed() method_id {
+    return get_data().begin_parse().load_int(1);
+}
+
+;;
+;; Routing of a Contract Dao
+;;
+
+((slice, slice, slice, int, slice, int), int) $Dao$_contract_router_internal((slice, slice, slice, int, slice, int) self, int msg_bounced, slice in_msg) impure inline_ref {
+    ;; Handle bounced messages
+    if (msg_bounced) {
+        return (self, true);
+    }
+    
+    ;; Parse incoming message
+    int op = 0;
+    if (slice_bits(in_msg) >= 32) {
+        op = in_msg.preload_uint(32);
+    }
+    
+    
+    ;; Receive DaoInit message
+    if (op == 3971512043) {
+        var msg = in_msg~$DaoInit$_load();
+        self~$Dao$_internal_binary_DaoInit(msg);
+        return (self, true);
+    }
+    
+    ;; Receive SetOwner message
+    if (op == 3266583875) {
+        var msg = in_msg~$SetOwner$_load();
+        self~$Dao$_internal_binary_SetOwner(msg);
+        return (self, true);
+    }
+    
+    ;; Receive SetProposalOwner message
+    if (op == 3504586358) {
+        var msg = in_msg~$SetProposalOwner$_load();
+        self~$Dao$_internal_binary_SetProposalOwner(msg);
+        return (self, true);
+    }
+    
+    ;; Receive SetMetadata message
+    if (op == 3660550271) {
+        var msg = in_msg~$SetMetadata$_load();
+        self~$Dao$_internal_binary_SetMetadata(msg);
+        return (self, true);
+    }
+    
+    ;; Receive SetFwdMsgFee message
+    if (op == 4109608450) {
+        var msg = in_msg~$SetFwdMsgFee$_load();
+        self~$Dao$_internal_binary_SetFwdMsgFee(msg);
+        return (self, true);
+    }
+    
+    ;; Receive FwdMsg message
+    if (op == 1690551268) {
+        var msg = in_msg~$FwdMsg$_load();
+        self~$Dao$_internal_binary_FwdMsg(msg);
+        return (self, true);
+    }
+    
+    ;; Receive Deploy message
+    if (op == 2490013878) {
+        var msg = in_msg~$Deploy$_load();
+        self~$Dao$_internal_binary_Deploy(msg);
+        return (self, true);
+    }
+    
+    return (self, false);
+}
+
+() recv_internal(int msg_value, cell in_msg_cell, slice in_msg) impure {
+    
+    ;; Context
+    var cs = in_msg_cell.begin_parse();
+    var msg_flags = cs~load_uint(4);
+    var msg_bounced = -(msg_flags & 1);
+    slice msg_sender_addr = __tact_verify_address(cs~load_msg_addr());
+    __tact_context = (msg_bounced, msg_sender_addr, msg_value, cs);
+    __tact_context_sender = msg_sender_addr;
+    
+    ;; Load contract data
+    var self = $Dao$_contract_load();
+    
+    ;; Handle operation
+    int handled = self~$Dao$_contract_router_internal(msg_bounced, in_msg);
+    
+    ;; Throw if not handled
+    throw_unless(130, handled);
+    
+    ;; Persist state
+    $Dao$_contract_store(self);
+}

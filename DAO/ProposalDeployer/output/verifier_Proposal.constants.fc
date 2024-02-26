@@ -1,0 +1,2 @@
+;; String ""
+slice __gen_slice_string_96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7() asm "B{b5ee9c724101010100020000004cacb9cd} B>boc <s PUSHSLICE";

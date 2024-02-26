@@ -1,0 +1,219 @@
+;;
+;; Type: StateInit
+;; TLB: _ code:^cell data:^cell = StateInit
+;;
+
+((cell, cell)) $StateInit$_not_null(tuple v) inline {
+    throw_if(128, null?(v));
+    var (cell vvv'code, cell vvv'data) = __tact_tuple_destroy_2(v);
+    return (vvv'code, vvv'data);
+}
+
+;;
+;; Type: Context
+;; TLB: _ bounced:bool sender:address value:int257 raw:^slice = Context
+;;
+
+_ $Context$_get_value((int, slice, int, slice) v) inline {
+    var (v'bounced, v'sender, v'value, v'raw) = v;
+    return v'value;
+}
+
+;;
+;; Type: SendParameters
+;; TLB: _ bounce:bool to:address value:int257 mode:int257 body:Maybe ^cell code:Maybe ^cell data:Maybe ^cell = SendParameters
+;;
+
+(slice, ((int, slice, int, int, cell, cell, cell))) $SendParameters$_load(slice sc_0) inline_ref {
+    var v'bounce = sc_0~load_int(1);
+    var v'to = sc_0~__tact_load_address();
+    var v'value = sc_0~load_int(257);
+    var v'mode = sc_0~load_int(257);
+    var v'body = sc_0~load_int(1) ? sc_0~load_ref() : null();
+    var v'code = sc_0~load_int(1) ? sc_0~load_ref() : null();
+    var v'data = sc_0~load_int(1) ? sc_0~load_ref() : null();
+    return (sc_0, (v'bounce, v'to, v'value, v'mode, v'body, v'code, v'data));
+}
+
+((int, slice, int, int, cell, cell, cell)) $SendParameters$_constructor_bounce_to_value_mode_body_code_data(int bounce, slice to, int value, int mode, cell body, cell code, cell data) inline {
+    return (bounce, to, value, mode, body, code, data);
+}
+
+;;
+;; Type: Deploy
+;; Header: 0x946a98b6
+;; TLB: deploy#946a98b6 queryId:uint64 = Deploy
+;;
+
+(slice, ((int))) $Deploy$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 2490013878);
+    var v'queryId = sc_0~load_uint(64);
+    return (sc_0, (v'queryId));
+}
+
+;;
+;; Type: DeployOk
+;; Header: 0xaff90f57
+;; TLB: deploy_ok#aff90f57 queryId:uint64 = DeployOk
+;;
+
+builder $DeployOk$_store(builder build_0, (int) v) inline {
+    var (v'queryId) = v;
+    build_0 = store_uint(build_0, 2952335191, 32);
+    build_0 = build_0.store_uint(v'queryId, 64);
+    return build_0;
+}
+
+cell $DeployOk$_store_cell((int) v) inline {
+    return $DeployOk$_store(begin_cell(), v).end_cell();
+}
+
+((int)) $DeployOk$_constructor_queryId(int queryId) inline {
+    return (queryId);
+}
+
+;;
+;; Type: SetOwner
+;; Header: 0xc2b41d43
+;; TLB: set_owner#c2b41d43 newOwner:address = SetOwner
+;;
+
+(slice, ((slice))) $SetOwner$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 3266583875);
+    var v'newOwner = sc_0~__tact_load_address();
+    return (sc_0, (v'newOwner));
+}
+
+;;
+;; Type: SetProposalOwner
+;; Header: 0xd0e3be76
+;; TLB: set_proposal_owner#d0e3be76 newProposalOwner:address = SetProposalOwner
+;;
+
+(slice, ((slice))) $SetProposalOwner$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 3504586358);
+    var v'newProposalOwner = sc_0~__tact_load_address();
+    return (sc_0, (v'newProposalOwner));
+}
+
+;;
+;; Type: SetFwdMsgFee
+;; Header: 0xf4f3a602
+;; TLB: set_fwd_msg_fee#f4f3a602 newFwdMsgFee:uint64 = SetFwdMsgFee
+;;
+
+(slice, ((int))) $SetFwdMsgFee$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 4109608450);
+    var v'newFwdMsgFee = sc_0~load_uint(64);
+    return (sc_0, (v'newFwdMsgFee));
+}
+
+;;
+;; Type: SetMetadata
+;; Header: 0xda2f907f
+;; TLB: set_metadata#da2f907f newMetadata:address = SetMetadata
+;;
+
+(slice, ((slice))) $SetMetadata$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 3660550271);
+    var v'newMetadata = sc_0~__tact_load_address();
+    return (sc_0, (v'newMetadata));
+}
+
+;;
+;; Type: FwdMsg
+;; Header: 0x64c3c3e4
+;; TLB: fwd_msg#64c3c3e4 fwdMsg:SendParameters{bounce:bool,to:address,value:int257,mode:int257,body:Maybe ^cell,code:Maybe ^cell,data:Maybe ^cell} = FwdMsg
+;;
+
+(slice, (((int, slice, int, int, cell, cell, cell)))) $FwdMsg$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 1690551268);
+    var v'fwdMsg = sc_0~$SendParameters$_load();
+    return (sc_0, (v'fwdMsg));
+}
+
+;;
+;; Type: DaoInit
+;; Header: 0xecb876eb
+;; TLB: dao_init#ecb876eb owner:address proposalOwner:address metadata:address fwdMsgFee:uint64 = DaoInit
+;;
+
+(slice, ((slice, slice, slice, int))) $DaoInit$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 3971512043);
+    var v'owner = sc_0~__tact_load_address();
+    var v'proposalOwner = sc_0~__tact_load_address();
+    var v'metadata = sc_0~__tact_load_address();
+    var v'fwdMsgFee = sc_0~load_uint(64);
+    return (sc_0, (v'owner, v'proposalOwner, v'metadata, v'fwdMsgFee));
+}
+
+;;
+;; Type: DaoContractState
+;; TLB: _ registry:address owner:address proposalOwner:address metadata:address daoIndex:uint32 fwdMsgFee:uint64 = DaoContractState
+;;
+
+(slice, slice, slice, slice, int, int) $DaoContractState$_to_external(((slice, slice, slice, slice, int, int)) v) inline {
+    var (v'registry, v'owner, v'proposalOwner, v'metadata, v'daoIndex, v'fwdMsgFee) = v; 
+    return (v'registry, v'owner, v'proposalOwner, v'metadata, v'daoIndex, v'fwdMsgFee);
+}
+
+((slice, slice, slice, slice, int, int)) $DaoContractState$_constructor_registry_owner_proposalOwner_metadata_daoIndex_fwdMsgFee(slice registry, slice owner, slice proposalOwner, slice metadata, int daoIndex, int fwdMsgFee) inline {
+    return (registry, owner, proposalOwner, metadata, daoIndex, fwdMsgFee);
+}
+
+;;
+;; Type: Dao
+;;
+
+builder $Dao$_store(builder build_0, (slice, slice, slice, int, slice, int) v) inline {
+    var (v'owner, v'registry, v'proposalOwner, v'daoIndex, v'metadata, v'fwdMsgFee) = v;
+    build_0 = __tact_store_address(build_0, v'owner);
+    build_0 = __tact_store_address(build_0, v'registry);
+    build_0 = __tact_store_address(build_0, v'proposalOwner);
+    build_0 = build_0.store_uint(v'daoIndex, 32);
+    var build_1 = begin_cell();
+    build_1 = __tact_store_address(build_1, v'metadata);
+    build_1 = build_1.store_uint(v'fwdMsgFee, 64);
+    build_0 = store_ref(build_0, build_1.end_cell());
+    return build_0;
+}
+
+(slice, ((slice, slice, slice, int, slice, int))) $Dao$_load(slice sc_0) inline {
+    var v'owner = sc_0~__tact_load_address();
+    var v'registry = sc_0~__tact_load_address();
+    var v'proposalOwner = sc_0~__tact_load_address();
+    var v'daoIndex = sc_0~load_uint(32);
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'metadata = sc_1~__tact_load_address();
+    var v'fwdMsgFee = sc_1~load_uint(64);
+    return (sc_0, (v'owner, v'registry, v'proposalOwner, v'daoIndex, v'metadata, v'fwdMsgFee));
+}
+
+(slice, ((slice, int))) $Dao$init$_load(slice sc_0) inline {
+    var v'registry = sc_0~__tact_load_address();
+    var v'daoIndex = sc_0~load_int(257);
+    return (sc_0, (v'registry, v'daoIndex));
+}
+
+(slice, slice, slice, int, slice, int) $Dao$_contract_load() impure inline_ref {
+    slice $sc = get_data().begin_parse();
+    __tact_context_sys = $sc~load_ref();
+    int $loaded = $sc~load_int(1);
+    if ($loaded) {
+        return $sc~$Dao$_load();
+    } else {
+        ;; Allow only workchain deployments
+        throw_unless(137, my_address().preload_uint(11) == 1024);
+        (slice registry, int daoIndex) = $sc~$Dao$init$_load();
+        $sc.end_parse();
+        return $Dao$_contract_init(registry, daoIndex);
+    }
+}
+
+() $Dao$_contract_store((slice, slice, slice, int, slice, int) v) impure inline {
+    builder b = begin_cell();
+    b = b.store_ref(__tact_context_sys);
+    b = b.store_int(true, 1);
+    b = $Dao$_store(b, v);
+    set_data(b.end_cell());
+}

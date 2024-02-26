@@ -1,0 +1,188 @@
+;;
+;; Type: StateInit
+;; TLB: _ code:^cell data:^cell = StateInit
+;;
+
+((cell, cell)) $StateInit$_not_null(tuple v) inline {
+    throw_if(128, null?(v));
+    var (cell vvv'code, cell vvv'data) = __tact_tuple_destroy_2(v);
+    return (vvv'code, vvv'data);
+}
+
+;;
+;; Type: SendParameters
+;; TLB: _ bounce:bool to:address value:int257 mode:int257 body:Maybe ^cell code:Maybe ^cell data:Maybe ^cell = SendParameters
+;;
+
+((int, slice, int, int, cell, cell, cell)) $SendParameters$_constructor_bounce_to_value_mode_body_code_data(int bounce, slice to, int value, int mode, cell body, cell code, cell data) inline {
+    return (bounce, to, value, mode, body, code, data);
+}
+
+;;
+;; Type: Deploy
+;; Header: 0x946a98b6
+;; TLB: deploy#946a98b6 queryId:uint64 = Deploy
+;;
+
+(slice, ((int))) $Deploy$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 2490013878);
+    var v'queryId = sc_0~load_uint(64);
+    return (sc_0, (v'queryId));
+}
+
+;;
+;; Type: DeployOk
+;; Header: 0xaff90f57
+;; TLB: deploy_ok#aff90f57 queryId:uint64 = DeployOk
+;;
+
+builder $DeployOk$_store(builder build_0, (int) v) inline {
+    var (v'queryId) = v;
+    build_0 = store_uint(build_0, 2952335191, 32);
+    build_0 = build_0.store_uint(v'queryId, 64);
+    return build_0;
+}
+
+cell $DeployOk$_store_cell((int) v) inline {
+    return $DeployOk$_store(begin_cell(), v).end_cell();
+}
+
+((int)) $DeployOk$_constructor_queryId(int queryId) inline {
+    return (queryId);
+}
+
+;;
+;; Type: Params
+;; TLB: _ proposalStartTime:uint64 proposalEndTime:uint64 proposalSnapshotTime:uint64 votingSystem:^string votingPowerStrategies:^string title:^string description:^string quorum:^string hide:bool = Params
+;;
+
+(slice, ((int, int, int, slice, slice, slice, slice, slice, int))) $Params$_load(slice sc_0) inline_ref {
+    var v'proposalStartTime = sc_0~load_uint(64);
+    var v'proposalEndTime = sc_0~load_uint(64);
+    var v'proposalSnapshotTime = sc_0~load_uint(64);
+    var v'votingSystem = sc_0~load_ref().begin_parse();
+    var v'votingPowerStrategies = sc_0~load_ref().begin_parse();
+    var v'title = sc_0~load_ref().begin_parse();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'description = sc_1~load_ref().begin_parse();
+    var v'quorum = sc_1~load_ref().begin_parse();
+    var v'hide = sc_1~load_int(1);
+    return (sc_0, (v'proposalStartTime, v'proposalEndTime, v'proposalSnapshotTime, v'votingSystem, v'votingPowerStrategies, v'title, v'description, v'quorum, v'hide));
+}
+
+;;
+;; Type: ProposalInit
+;; Header: 0x3c1d6b5c
+;; TLB: proposal_init#3c1d6b5c body:Params{proposalStartTime:uint64,proposalEndTime:uint64,proposalSnapshotTime:uint64,votingSystem:^string,votingPowerStrategies:^string,title:^string,description:^string,quorum:^string,hide:bool} = ProposalInit
+;;
+
+(slice, (((int, int, int, slice, slice, slice, slice, slice, int)))) $ProposalInit$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 1008560988);
+    var v'body = sc_0~$Params$_load();
+    return (sc_0, (v'body));
+}
+
+;;
+;; Type: Vote
+;; Header: 0x7c420ea2
+;; TLB: vote#7c420ea2 comment:^string = Vote
+;;
+
+(slice, ((slice))) $Vote$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 2084703906);
+    var v'comment = sc_0~load_ref().begin_parse();
+    return (sc_0, (v'comment));
+}
+
+;;
+;; Type: UpdateProposal
+;; Header: 0x30b5d88c
+;; TLB: update_proposal#30b5d88c updateParams:Params{proposalStartTime:uint64,proposalEndTime:uint64,proposalSnapshotTime:uint64,votingSystem:^string,votingPowerStrategies:^string,title:^string,description:^string,quorum:^string,hide:bool} = UpdateProposal
+;;
+
+(slice, (((int, int, int, slice, slice, slice, slice, slice, int)))) $UpdateProposal$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 817223820);
+    var v'updateParams = sc_0~$Params$_load();
+    return (sc_0, (v'updateParams));
+}
+
+;;
+;; Type: ProposalContractState
+;; TLB: _ proposalDeployer:address id:uint32 proposalStartTime:uint64 proposalEndTime:uint64 proposalSnapshotTime:uint64 votingSystem:^string votingPowerStrategies:^string title:^string description:^string quorum:^string hide:bool = ProposalContractState
+;;
+
+(slice, int, int, int, int, slice, slice, slice, slice, slice, int) $ProposalContractState$_to_external(((slice, int, int, int, int, slice, slice, slice, slice, slice, int)) v) inline {
+    var (v'proposalDeployer, v'id, v'proposalStartTime, v'proposalEndTime, v'proposalSnapshotTime, v'votingSystem, v'votingPowerStrategies, v'title, v'description, v'quorum, v'hide) = v; 
+    return (v'proposalDeployer, v'id, v'proposalStartTime, v'proposalEndTime, v'proposalSnapshotTime, v'votingSystem, v'votingPowerStrategies, v'title, v'description, v'quorum, v'hide);
+}
+
+((slice, int, int, int, int, slice, slice, slice, slice, slice, int)) $ProposalContractState$_constructor_proposalDeployer_id_proposalStartTime_proposalEndTime_proposalSnapshotTime_votingSystem_votingPowerStrategies_title_description_quorum_hide(slice proposalDeployer, int id, int proposalStartTime, int proposalEndTime, int proposalSnapshotTime, slice votingSystem, slice votingPowerStrategies, slice title, slice description, slice quorum, int hide) inline {
+    return (proposalDeployer, id, proposalStartTime, proposalEndTime, proposalSnapshotTime, votingSystem, votingPowerStrategies, title, description, quorum, hide);
+}
+
+;;
+;; Type: Proposal
+;;
+
+builder $Proposal$_store(builder build_0, (slice, int, int, int, int, slice, slice, slice, slice, slice, int) v) inline {
+    var (v'proposalDeployer, v'id, v'proposalStartTime, v'proposalEndTime, v'proposalSnapshotTime, v'votingSystem, v'votingPowerStrategies, v'title, v'description, v'quorum, v'hide) = v;
+    build_0 = __tact_store_address(build_0, v'proposalDeployer);
+    build_0 = build_0.store_uint(v'id, 32);
+    build_0 = build_0.store_uint(v'proposalStartTime, 64);
+    build_0 = build_0.store_uint(v'proposalEndTime, 64);
+    build_0 = build_0.store_uint(v'proposalSnapshotTime, 64);
+    build_0 = build_0.store_ref(begin_cell().store_slice(v'votingSystem).end_cell());
+    build_0 = build_0.store_ref(begin_cell().store_slice(v'votingPowerStrategies).end_cell());
+    var build_1 = begin_cell();
+    build_1 = build_1.store_ref(begin_cell().store_slice(v'title).end_cell());
+    build_1 = build_1.store_ref(begin_cell().store_slice(v'description).end_cell());
+    build_1 = build_1.store_ref(begin_cell().store_slice(v'quorum).end_cell());
+    build_1 = build_1.store_int(v'hide, 1);
+    build_0 = store_ref(build_0, build_1.end_cell());
+    return build_0;
+}
+
+(slice, ((slice, int, int, int, int, slice, slice, slice, slice, slice, int))) $Proposal$_load(slice sc_0) inline {
+    var v'proposalDeployer = sc_0~__tact_load_address();
+    var v'id = sc_0~load_uint(32);
+    var v'proposalStartTime = sc_0~load_uint(64);
+    var v'proposalEndTime = sc_0~load_uint(64);
+    var v'proposalSnapshotTime = sc_0~load_uint(64);
+    var v'votingSystem = sc_0~load_ref().begin_parse();
+    var v'votingPowerStrategies = sc_0~load_ref().begin_parse();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'title = sc_1~load_ref().begin_parse();
+    var v'description = sc_1~load_ref().begin_parse();
+    var v'quorum = sc_1~load_ref().begin_parse();
+    var v'hide = sc_1~load_int(1);
+    return (sc_0, (v'proposalDeployer, v'id, v'proposalStartTime, v'proposalEndTime, v'proposalSnapshotTime, v'votingSystem, v'votingPowerStrategies, v'title, v'description, v'quorum, v'hide));
+}
+
+(slice, ((slice, int))) $Proposal$init$_load(slice sc_0) inline {
+    var v'proposalDeployer = sc_0~__tact_load_address();
+    var v'id = sc_0~load_int(257);
+    return (sc_0, (v'proposalDeployer, v'id));
+}
+
+(slice, int, int, int, int, slice, slice, slice, slice, slice, int) $Proposal$_contract_load() impure inline_ref {
+    slice $sc = get_data().begin_parse();
+    __tact_context_sys = $sc~load_ref();
+    int $loaded = $sc~load_int(1);
+    if ($loaded) {
+        return $sc~$Proposal$_load();
+    } else {
+        ;; Allow only workchain deployments
+        throw_unless(137, my_address().preload_uint(11) == 1024);
+        (slice proposalDeployer, int id) = $sc~$Proposal$init$_load();
+        $sc.end_parse();
+        return $Proposal$_contract_init(proposalDeployer, id);
+    }
+}
+
+() $Proposal$_contract_store((slice, int, int, int, int, slice, slice, slice, slice, slice, int) v) impure inline {
+    builder b = begin_cell();
+    b = b.store_ref(__tact_context_sys);
+    b = b.store_int(true, 1);
+    b = $Proposal$_store(b, v);
+    set_data(b.end_cell());
+}

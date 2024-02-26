@@ -1,0 +1,174 @@
+#pragma version =0.4.3;
+#pragma allow-post-modification;
+#pragma compute-asm-ltr;
+
+#include "verifier_ProposalDeployer.headers.fc";
+#include "verifier_ProposalDeployer.stdlib.fc";
+#include "verifier_ProposalDeployer.storage.fc";
+
+;;
+;; Contract ProposalDeployer functions
+;;
+
+(slice, int) $ProposalDeployer$_contract_init(slice $dao) impure inline_ref {
+    var (($self'dao, $self'nextProposalId)) = (null(), null());
+    $self'dao = $dao;
+    $self'nextProposalId = 0;
+    return ($self'dao, $self'nextProposalId);
+}
+
+((slice, int), (cell, cell)) $ProposalDeployer$_fun_getProposalStateInit((slice, int) $self, int $index) impure inline_ref {
+    var (($self'dao, $self'nextProposalId)) = $self;
+    return (($self'dao, $self'nextProposalId), $Proposal$_init_child(__tact_context_sys, my_address(), $index));
+}
+
+((slice, int), slice) $ProposalDeployer$_fun_dao((slice, int) $self) impure inline_ref {
+    var (($self'dao, $self'nextProposalId)) = $self;
+    return (($self'dao, $self'nextProposalId), $self'dao);
+}
+
+((slice, int), int) $ProposalDeployer$_fun_nextProposalId((slice, int) $self) impure inline_ref {
+    var (($self'dao, $self'nextProposalId)) = $self;
+    return (($self'dao, $self'nextProposalId), $self'nextProposalId);
+}
+
+((slice, int), slice) $ProposalDeployer$_fun_proposalAddr((slice, int) $self, int $index) impure inline_ref {
+    var (($self'dao, $self'nextProposalId)) = $self;
+    var ($init'code, $init'data) = ($self'dao, $self'nextProposalId)~$ProposalDeployer$_fun_getProposalStateInit($index);
+    return (($self'dao, $self'nextProposalId), $global_contractAddress(($init'code, $init'data)));
+}
+
+;;
+;; Receivers of a Contract ProposalDeployer
+;;
+
+(((slice, int)), ()) $ProposalDeployer$_internal_binary_DeployAndInitProposal((slice, int) $self, ((int, int, int, slice, slice, slice, slice, slice, int)) $msg) impure inline {
+    var ($self'dao, $self'nextProposalId) = $self;
+    var (($msg'body'proposalStartTime, $msg'body'proposalEndTime, $msg'body'proposalSnapshotTime, $msg'body'votingSystem, $msg'body'votingPowerStrategies, $msg'body'title, $msg'body'description, $msg'body'quorum, $msg'body'hide)) = $msg;
+    throw_unless(13403, ( __tact_slice_eq_bits($self'dao, __tact_context_get_sender()) ));
+    var ($init'code, $init'data) = ($self'dao, $self'nextProposalId)~$ProposalDeployer$_fun_getProposalStateInit($self'nextProposalId);
+    slice $proposalAddress = $global_contractAddress(($init'code, $init'data));
+    $global_send($SendParameters$_constructor_to_value_bounce_mode_body_code_data($proposalAddress, 0, false, 64, $ProposalInit$_store_cell($ProposalInit$_constructor_body(($msg'body'proposalStartTime, $msg'body'proposalEndTime, $msg'body'proposalSnapshotTime, $msg'body'votingSystem, $msg'body'votingPowerStrategies, $msg'body'title, $msg'body'description, $msg'body'quorum, $msg'body'hide))), $init'code, $init'data));
+    $self'nextProposalId = ($self'nextProposalId + 1);
+    return (($self'dao, $self'nextProposalId), ());
+}
+
+(((slice, int)), ()) $ProposalDeployer$_internal_binary_SendUpdateProposal((slice, int) $self, (slice, (int, int, int, slice, slice, slice, slice, slice, int)) $msg) impure inline {
+    var ($self'dao, $self'nextProposalId) = $self;
+    var ($msg'proposalAddress, ($msg'updateParams'proposalStartTime, $msg'updateParams'proposalEndTime, $msg'updateParams'proposalSnapshotTime, $msg'updateParams'votingSystem, $msg'updateParams'votingPowerStrategies, $msg'updateParams'title, $msg'updateParams'description, $msg'updateParams'quorum, $msg'updateParams'hide)) = $msg;
+    throw_unless(50214, ( __tact_slice_eq_bits($self'dao, __tact_context_get_sender()) ));
+    $global_send($SendParameters$_constructor_to_value_bounce_mode_body($msg'proposalAddress, 0, false, 64, $UpdateProposal$_store_cell($UpdateProposal$_constructor_updateParams(($msg'updateParams'proposalStartTime, $msg'updateParams'proposalEndTime, $msg'updateParams'proposalSnapshotTime, $msg'updateParams'votingSystem, $msg'updateParams'votingPowerStrategies, $msg'updateParams'title, $msg'updateParams'description, $msg'updateParams'quorum, $msg'updateParams'hide)))));
+    return (($self'dao, $self'nextProposalId), ());
+}
+
+(((slice, int)), ()) $ProposalDeployer$_internal_binary_Deploy((slice, int) $self, (int) $deploy) impure inline {
+    var ($self'dao, $self'nextProposalId) = $self;
+    var ($deploy'queryId) = $deploy;
+    ($self'dao, $self'nextProposalId)~$ProposalDeployer$_fun_notify($DeployOk$_store_cell($DeployOk$_constructor_queryId($deploy'queryId)));
+    return (($self'dao, $self'nextProposalId), ());
+}
+
+;;
+;; Get methods of a Contract ProposalDeployer
+;;
+
+_ %dao() method_id(123641) {
+    var self = $ProposalDeployer$_contract_load();
+    var res = self~$ProposalDeployer$_fun_dao();
+    return res;
+}
+
+_ %nextProposalId() method_id(97465) {
+    var self = $ProposalDeployer$_contract_load();
+    var res = self~$ProposalDeployer$_fun_nextProposalId();
+    return res;
+}
+
+_ %proposalAddr(int $$index) method_id(94082) {
+    int $index = $$index;
+    var self = $ProposalDeployer$_contract_load();
+    var res = self~$ProposalDeployer$_fun_proposalAddr($index);
+    return res;
+}
+
+_ supported_interfaces() method_id {
+    return (
+        "org.ton.introspection.v0"H >> 128,
+        "org.ton.abi.ipfs.v0"H >> 128,
+        "org.ton.deploy.lazy.v0"H >> 128,
+        "org.ton.debug.v0"H >> 128,
+        "org.ton.chain.workchain.v0"H >> 128
+    );
+}
+
+_ get_abi_ipfs() method_id {
+    return "ipfs://QmZ83yni7gq3Z2us2TEUAAC7LdU75qUuwgyfhq3SxxCYw7";
+}
+
+_ lazy_deployment_completed() method_id {
+    return get_data().begin_parse().load_int(1);
+}
+
+;;
+;; Routing of a Contract ProposalDeployer
+;;
+
+((slice, int), int) $ProposalDeployer$_contract_router_internal((slice, int) self, int msg_bounced, slice in_msg) impure inline_ref {
+    ;; Handle bounced messages
+    if (msg_bounced) {
+        return (self, true);
+    }
+    
+    ;; Parse incoming message
+    int op = 0;
+    if (slice_bits(in_msg) >= 32) {
+        op = in_msg.preload_uint(32);
+    }
+    
+    
+    ;; Receive DeployAndInitProposal message
+    if (op == 1496883659) {
+        var msg = in_msg~$DeployAndInitProposal$_load();
+        self~$ProposalDeployer$_internal_binary_DeployAndInitProposal(msg);
+        return (self, true);
+    }
+    
+    ;; Receive SendUpdateProposal message
+    if (op == 2568858687) {
+        var msg = in_msg~$SendUpdateProposal$_load();
+        self~$ProposalDeployer$_internal_binary_SendUpdateProposal(msg);
+        return (self, true);
+    }
+    
+    ;; Receive Deploy message
+    if (op == 2490013878) {
+        var msg = in_msg~$Deploy$_load();
+        self~$ProposalDeployer$_internal_binary_Deploy(msg);
+        return (self, true);
+    }
+    
+    return (self, false);
+}
+
+() recv_internal(int msg_value, cell in_msg_cell, slice in_msg) impure {
+    
+    ;; Context
+    var cs = in_msg_cell.begin_parse();
+    var msg_flags = cs~load_uint(4);
+    var msg_bounced = -(msg_flags & 1);
+    slice msg_sender_addr = __tact_verify_address(cs~load_msg_addr());
+    __tact_context = (msg_bounced, msg_sender_addr, msg_value, cs);
+    __tact_context_sender = msg_sender_addr;
+    
+    ;; Load contract data
+    var self = $ProposalDeployer$_contract_load();
+    
+    ;; Handle operation
+    int handled = self~$ProposalDeployer$_contract_router_internal(msg_bounced, in_msg);
+    
+    ;; Throw if not handled
+    throw_unless(130, handled);
+    
+    ;; Persist state
+    $ProposalDeployer$_contract_store(self);
+}

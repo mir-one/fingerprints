@@ -1,0 +1,122 @@
+;;
+;; Type: StateInit
+;; TLB: _ code:^cell data:^cell = StateInit
+;;
+
+((cell, cell)) $StateInit$_not_null(tuple v) inline {
+    throw_if(128, null?(v));
+    var (cell vvv'code, cell vvv'data) = __tact_tuple_destroy_2(v);
+    return (vvv'code, vvv'data);
+}
+
+;;
+;; Type: SendParameters
+;; TLB: _ bounce:bool to:address value:int257 mode:int257 body:Maybe ^cell code:Maybe ^cell data:Maybe ^cell = SendParameters
+;;
+
+((int, slice, int, int, cell, cell, cell)) $SendParameters$_constructor_bounce_to_value_mode_body_code_data(int bounce, slice to, int value, int mode, cell body, cell code, cell data) inline {
+    return (bounce, to, value, mode, body, code, data);
+}
+
+((int, slice, int, int, cell, cell, cell)) $SendParameters$_constructor_to_value_bounce_mode_body_code_data(slice to, int value, int bounce, int mode, cell body, cell code, cell data) inline {
+    return (bounce, to, value, mode, body, code, data);
+}
+
+;;
+;; Type: Deploy
+;; Header: 0x946a98b6
+;; TLB: deploy#946a98b6 queryId:uint64 = Deploy
+;;
+
+(slice, ((int))) $Deploy$_load(slice sc_0) inline {
+    throw_unless(129, sc_0~load_uint(32) == 2490013878);
+    var v'queryId = sc_0~load_uint(64);
+    return (sc_0, (v'queryId));
+}
+
+;;
+;; Type: DeployOk
+;; Header: 0xaff90f57
+;; TLB: deploy_ok#aff90f57 queryId:uint64 = DeployOk
+;;
+
+builder $DeployOk$_store(builder build_0, (int) v) inline {
+    var (v'queryId) = v;
+    build_0 = store_uint(build_0, 2952335191, 32);
+    build_0 = build_0.store_uint(v'queryId, 64);
+    return build_0;
+}
+
+cell $DeployOk$_store_cell((int) v) inline {
+    return $DeployOk$_store(begin_cell(), v).end_cell();
+}
+
+((int)) $DeployOk$_constructor_queryId(int queryId) inline {
+    return (queryId);
+}
+
+;;
+;; Type: RouteDeployAndInitDao
+;; Header: 0x2c10ad33
+;; TLB: route_deploy_and_init_dao#2c10ad33 prodMsgValue:uint64 devMsgValue:uint64 prodRegistry:address devRegistry:address owner:address proposalOwner:address metadata:address = RouteDeployAndInitDao
+;;
+
+(slice, ((int, int, slice, slice, slice, slice, slice))) $RouteDeployAndInitDao$_load(slice sc_0) inline_ref {
+    throw_unless(129, sc_0~load_uint(32) == 739290419);
+    var v'prodMsgValue = sc_0~load_uint(64);
+    var v'devMsgValue = sc_0~load_uint(64);
+    var v'prodRegistry = sc_0~__tact_load_address();
+    var v'devRegistry = sc_0~__tact_load_address();
+    var v'owner = sc_0~__tact_load_address();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'proposalOwner = sc_1~__tact_load_address();
+    var v'metadata = sc_1~__tact_load_address();
+    return (sc_0, (v'prodMsgValue, v'devMsgValue, v'prodRegistry, v'devRegistry, v'owner, v'proposalOwner, v'metadata));
+}
+
+;;
+;; Type: DeployAndInitDao
+;; Header: 0xc95b9b64
+;; TLB: deploy_and_init_dao#c95b9b64 owner:address proposalOwner:address metadata:address = DeployAndInitDao
+;;
+
+builder $DeployAndInitDao$_store(builder build_0, (slice, slice, slice) v) inline {
+    var (v'owner, v'proposalOwner, v'metadata) = v;
+    build_0 = store_uint(build_0, 3378223972, 32);
+    build_0 = __tact_store_address(build_0, v'owner);
+    build_0 = __tact_store_address(build_0, v'proposalOwner);
+    build_0 = __tact_store_address(build_0, v'metadata);
+    return build_0;
+}
+
+cell $DeployAndInitDao$_store_cell((slice, slice, slice) v) inline {
+    return $DeployAndInitDao$_store(begin_cell(), v).end_cell();
+}
+
+((slice, slice, slice)) $DeployAndInitDao$_constructor_owner_proposalOwner_metadata(slice owner, slice proposalOwner, slice metadata) inline {
+    return (owner, proposalOwner, metadata);
+}
+
+;;
+;; Type: Router
+;;
+
+tuple $Router$_contract_load() impure inline_ref {
+    slice $sc = get_data().begin_parse();
+    __tact_context_sys = $sc~load_ref();
+    int $loaded = $sc~load_int(1);
+    if ($loaded) {
+        return null();
+    } else {
+        ;; Allow only workchain deployments
+        throw_unless(137, my_address().preload_uint(11) == 1024);
+        return $Router$_contract_init();
+    }
+}
+
+() $Router$_contract_store(tuple v) impure inline {
+    builder b = begin_cell();
+    b = b.store_ref(__tact_context_sys);
+    b = b.store_int(true, 1);
+    set_data(b.end_cell());
+}
