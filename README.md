@@ -1,6 +1,6 @@
 # TON Fingerprints
 
-![cover](/banner.png)
+![cover](img/banner.png)
 
 This is a NFT Collection of unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web 3.0 and metaverse era as digital biometric information on The Open Network.
 
@@ -10,13 +10,13 @@ This is a NFT Collection of unique digital fingerprints created based on the alg
 
 Google Chrome: Please navigate to [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?utm_source=usz) and install it.
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 ### Step 2
 
 Click 'Install' to install a TON Fingerprints [userscript](https://github.com/mir-one/fingerprints/releases).
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 ### RRP
 
@@ -38,13 +38,13 @@ $Stage_6 = {Price Stage_5 \over 3} + Price Stage_5$
 
 $Floor = {Price Stage_6 \over AmountGroupSale} + Price Stage_6$
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 ## Domain fingerprints.ton
 
 [fingerprints.ton](http://fingerprints.ton)
 
-![img](/fingerprints.ton.png)
+![img](img/fingerprints.ton.png)
 
 TON DNS is a service that allows users to assign a human-readable name to crypto wallets, smart contracts, and websites. With TON DNS, access to decentralized services is analogous to access to websites on the internet.
 
@@ -131,11 +131,13 @@ cd /root/TON
 
 ## 📊 Histogram
 
-| ![Genesys](Genesis.png) | ![Count](<Count%20lines%20_Amount_,%20era%20Genesis%20(red).png>) |
-| ----------------------- | ----------------------------------------------------------------- |
-| ![Array](Array.png)     | ![Era](/Era%20Genesis_Rarity%20vs%20_Era%20Genesis_Lines_.png)    |
+| ![Genesys](img/Genesis.png) | ![Count](<img/Count%20lines%20_Amount_,%20era%20Genesis%20(red).png>) |
+| --------------------------- | --------------------------------------------------------------------- |
+| ![Array](img/Array.png)     | ![Era](img/Era%20Genesis_Rarity%20vs%20_Era%20Genesis_Lines_.png)     |
 
 ### Rarity name
+
+![RC](img/RarityCategory.png)
 
 | Amount | Counter | Rarity | Price   | Category       | RU Category             |
 | ------ | ------- | ------ | ------- | -------------- | ----------------------- |
@@ -301,7 +303,7 @@ Immerse yourself in the fascinating world of fingerprint scanning, compete with 
 
 #### Level system
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 The leveling system is the independent progression system in which players earn XP (Experience Points) at the end of a completed scanning and is displayed in the upper left corner of the main menu.
 
@@ -310,7 +312,7 @@ export const getXpForNextLevel = (currentLevel: number) =>
   currentLevel ** 2 + currentLevel + 33;
 ```
 
-![xp](XP%20vs%20_Level_.png)
+![xp](img/XP%20vs%20_Level_.png)
 
 This is a function that calculates the amount of experience needed to reach the next level in a game or progress system. The function takes the current level (as a number) and uses it to calculate the required experience.
 
