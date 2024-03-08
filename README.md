@@ -286,6 +286,34 @@ SVG files include:
 </metadata>
 ```
 
+Getgems NFT + btn
+
+```json
+{
+  "name": "Name",
+
+  "description": "Description",
+
+  "image": "link",
+
+  "buttons": [
+    {
+      "label": "Open TON Fingerprints",
+
+      "uri": "https://getgems.io/fingerprints"
+    }
+  ],
+
+  "attributes": [
+    {
+      "trait_type": "Attribute",
+
+      "value": "Value"
+    }
+  ]
+}
+```
+
 ### Scan
 
 Telegram Mini App [Fingerprint Scanner](https://t.me/fingerprint_scanner_bot/scan)
