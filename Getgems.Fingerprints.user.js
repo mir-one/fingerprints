@@ -13,97 +13,97 @@
 // ==/UserScript==
 
 (function () {
-  "use strict";
-  let nfts = [];
+    "use strict";
+    let nfts = [];
 
-  async function load() {
-    const response = await fetch(
-      `https://gist.githubusercontent.com/inozemtsev-roman/499d56624d7794b6297dcc265ab5526f/raw/9f12aa78ecea02f40110f1e6e223d9dbc80cbd32/fingerprints.json`
+    async function load() {
+        const response = await fetch(
+            `https://gist.githubusercontent.com/inozemtsev-roman/499d56624d7794b6297dcc265ab5526f/raw/9f12aa78ecea02f40110f1e6e223d9dbc80cbd32/fingerprints.json`
     );
-    const result = await response.json();
+      const result = await response.json();
 
-    nfts = result;
-    setTimeout(updateUI, 1000);
+      nfts = result;
+      setTimeout(updateUI, 1000);
   }
 
-  function updateUI() {
-    const $subtitles = [...document.querySelectorAll(".NftPreview__title")];
-    console.log(`Adding details to ${$subtitles.length} NFT`);
-    for (const $subtitle of $subtitles) {
-      if (
-        !$subtitle.getAttribute("done") &&
-        $subtitle.textContent.includes("Fingerprint #")
-      ) {
-        const idx = +$subtitle.textContent.replace("Fingerprint #", "");
-        const { floor, rarityIndex, DAO, Tier } = nfts.find(
-          (nft) => nft.idx === idx
-        );
-        const rarityText = `R: ${rarityIndex}`;
-        let p1 = document.createElement("p");
-        p1.textContent = rarityText;
-        p1.id = `custom__rarity`;
-        let p2 = document.createElement("p");
-        p2.id = `custom__floor`;
-        p2.textContent = `RRP: ${floor} 💎`;
-        let p3 = document.createElement("p");
-        p3.id = `custom__text`;
-        const rareWords = [];
-        if (DAO === "thumb") rareWords.push(DAO);
-        if (DAO === "index") rareWords.push(DAO);
-        if (DAO === "middle") rareWords.push(DAO);
-        if (DAO === "ring") rareWords.push(DAO);
-        if (DAO === "pinkie") rareWords.push(DAO);
-        if (Tier === "SECRET") rareWords.push(Tier);
-        p3.textContent = rareWords.join(" ");
-        insertAfter(p3, $subtitle);
-        insertAfter(p2, $subtitle);
-        insertAfter(p1, $subtitle);
-        $subtitle.setAttribute("done", "true");
-      }
+    function updateUI() {
+        const $subtitles = [...document.querySelectorAll(".NftPreview__title")];
+        console.log(`Adding details to ${$subtitles.length} NFT`);
+        for (const $subtitle of $subtitles) {
+            if (
+                !$subtitle.getAttribute("done") &&
+                $subtitle.textContent.includes("Fingerprint #")
+            ) {
+                const idx = +$subtitle.textContent.replace("Fingerprint #", "");
+                const { floor, rarityIndex, DAO, Tier } = nfts.find(
+                    (nft) => nft.idx === idx
+                );
+                const rarityText = `R: ${rarityIndex}`;
+                let p1 = document.createElement("p");
+                p1.textContent = rarityText;
+                p1.id = `custom__rarity`;
+                let p2 = document.createElement("p");
+                p2.id = `custom__floor`;
+                p2.textContent = `RRP: ${floor} 💎`;
+                let p3 = document.createElement("p");
+                p3.id = `custom__text`;
+                const rareWords = [];
+                if (DAO === "thumb") rareWords.push(DAO);
+                if (DAO === "index") rareWords.push(DAO);
+                if (DAO === "middle") rareWords.push(DAO);
+                if (DAO === "ring") rareWords.push(DAO);
+                if (DAO === "pinkie") rareWords.push(DAO);
+                if (Tier === "SECRET") rareWords.push(Tier);
+                p3.textContent = rareWords.join(" ");
+                insertAfter(p3, $subtitle);
+                insertAfter(p2, $subtitle);
+                insertAfter(p1, $subtitle);
+                $subtitle.setAttribute("done", "true");
+            }
+        }
+        setTimeout(updateUI, 5000);
     }
-    setTimeout(updateUI, 5000);
-  }
 
-  function insertAfter(newNode, referenceNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-  }
-
-  function addGlobalStyle(css) {
-    let head, style;
-    head = document.getElementsByTagName("head")[0];
-    if (!head) {
-      return;
+    function insertAfter(newNode, referenceNode) {
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
     }
-    style = document.createElement("style");
-    style.type = "text/css";
-    style.innerHTML = css;
-    head.appendChild(style);
-  }
 
-  window.addEventListener("keydown", keydown);
-
-  function keydown(event) {
-    if (event.keyCode === 83) {
-      const $wrapper = document.querySelector(".NftsList");
-      const $all = [...document.querySelectorAll(".NftPreview__wrap")];
-      const r = $all.sort((a, b) => {
-        a =
-          +a.childNodes[0].childNodes[0].childNodes[1].childNodes[2]?.textContent.split(
-            " "
-          )[0] || 0;
-        b =
-          +b.childNodes[0].childNodes[0].childNodes[1].childNodes[2]?.textContent.split(
-            " "
-          )[0] || 0;
-        return b - a;
-      });
-      console.log({ r });
-      $wrapper.innerHTML = "";
-      for (let rr of r) $wrapper.append(rr);
+    function addGlobalStyle(css) {
+        let head, style;
+        head = document.getElementsByTagName("head")[0];
+        if (!head) {
+            return;
+        }
+        style = document.createElement("style");
+        style.type = "text/css";
+        style.innerHTML = css;
+        head.appendChild(style);
     }
-  }
 
-  addGlobalStyle(`
+    window.addEventListener("keydown", keydown);
+
+    function keydown(event) {
+        if (event.keyCode === 83) {
+            const $wrapper = document.querySelector(".NftsList");
+            const $all = [...document.querySelectorAll(".NftPreview__wrap")];
+            const r = $all.sort((a, b) => {
+                a =
+                    +a.childNodes[0].childNodes[0].childNodes[1].childNodes[2]?.textContent.split(
+                    " "
+                )[0] || 0;
+                b =
+                    +b.childNodes[0].childNodes[0].childNodes[1].childNodes[2]?.textContent.split(
+                    " "
+                )[0] || 0;
+                return b - a;
+            });
+            console.log({ r });
+            $wrapper.innerHTML = "";
+            for (let rr of r) $wrapper.append(rr);
+        }
+    }
+
+    addGlobalStyle(`
     @media (max-width: 5000px) {
       .NftPreview__wrap {
         width: calc((100% - (16px * 6))/6);
@@ -223,5 +223,5 @@
       letter-spacing: -.006px;
     }`);
 
-  load();
+    load();
 })();
