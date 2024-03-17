@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         TON Fingerprints
 // @namespace    http://fingerprints.ton
-// @version      0.0.1d
-// @description  This is a collection of 10 000 unique digital fingerprints created based on the algorithm for generating basic rings using a noise texture. Like human fingerprints, you can now use them for the Web3 and Metaverse era as digital biometric information on The Open Network.
+// @version      0.0.1e
+// @description  A browser extension that allows you to display the TON Fingerprints collection on the Getgems NFT marketplace provides useful information about each NFT. For each Fingerprint, its recommended price, the degree of rarity and the DAO group to which it belongs are indicated. This information will help users better understand the value and uniqueness of each NFT, as well as make informed buying or selling decisions. The extension provides convenient access to Fingerprint information and helps users keep up to date with the latest trends and changes on the marketplace.
 // @author       DAO Fingerprints
 // @match        https://getgems.io/collection/fingerprints*
 // @match        https://getgems.io/fingerprints*
@@ -128,43 +128,43 @@
         width: calc((100% - (16px * 2))/2);
       }
     }
-      @media (max-width: 470px) {
-        .NftPreview__wrap {
-          width: calc((100% - (16px * 2)) / 2);
-          #custom__rarity {
-        position: absolute;
-        top: -75px;
-        left: 16px;
-        text-align: left;
-        font-size: 16px;
-        color: #0098EA;
-        font-weight: 600;
-      }
+    @media (max-width: 470px) {
+      .NftPreview__wrap {
+        width: calc((100% - (16px * 2)) / 2);
+        #custom__rarity {
+      position: absolute;
+      top: -75px;
+      left: 16px;
+      text-align: left;
+      font-size: 16px;
+      color: #0098EA;
+      font-weight: 600;
+    }
 
-      #custom__text {
-        position: absolute;
-        top: -55px;
-        left: 16px;
-        text-align: left;
-        font-size: 14px;
-        color: #0098EA;
-        font-weight: 500;
-        text-transform: capitalize;
-      }
+    #custom__text {
+      position: absolute;
+      top: -55px;
+      left: 16px;
+      text-align: left;
+      font-size: 14px;
+      color: #0098EA;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
 
-      #custom__floor {
-        position: absolute;
-        top: -30px;
-        left: 16px;
-        text-align: left;
-        color: #E5E5E5;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 18px;
-        letter-spacing: -.006px;
+    #custom__floor {
+      position: absolute;
+      top: -30px;
+      left: 16px;
+      text-align: left;
+      color: #E5E5E5;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: -.006px;
+    }
       }
-        }
-      }
+    }
 
     .NftPreview__info {
       position: relative;
