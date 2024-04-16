@@ -10,8 +10,8 @@
 // @match        https://getgems.io/collection/EQATbIOeT9ziq7Jf76dJlnWIAiZggY2TeDteAh46D4QICBZj*
 // @icon         https://raw.githubusercontent.com/mir-one/fingerprints/main/site/index_files/1.jpg
 // @homepageURL  https://github.com/mir-one/fingerprints
-// @updateURL    https://github.com/mir-one/fingerprints/raw/main/Getgems.Fingerprints.user.js
-// @downloadURL  https://github.com/mir-one/fingerprints/raw/main/Getgems.Fingerprints.user.js
+// @updateURL    https://raw.githubusercontent.com/mir-one/fingerprints/main/Getgems.Fingerprints.user.js
+// @downloadURL  https://raw.githubusercontent.com/mir-one/fingerprints/main/Getgems.Fingerprints.user.js
 // @supportURL   https://github.com/mir-one/fingerprints/issues
 // @grant        none
 // ==/UserScript==
