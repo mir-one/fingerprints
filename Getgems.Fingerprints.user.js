@@ -22,7 +22,7 @@
 
     async function load() {
         const response = await fetch(
-            `https://gist.githubusercontent.com/inozemtsev-roman/499d56624d7794b6297dcc265ab5526f/raw/9f12aa78ecea02f40110f1e6e223d9dbc80cbd32/fingerprints.json`
+            `https://raw.githubusercontent.com/mir-one/fingerprints/main/rank.json`
     );
       const result = await response.json();
 
