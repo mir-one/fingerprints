@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         TON Fingerprints
 // @namespace    http://fingerprints.ton
-// @version      0.0.1e
+// @version      0.0.1f
 // @description  A browser extension that allows you to display the TON Fingerprints collection on the Getgems NFT marketplace provides useful information about each NFT. For each Fingerprint, its recommended price, the degree of rarity and the DAO group to which it belongs are indicated. This information will help users better understand the value and uniqueness of each NFT, as well as make informed buying or selling decisions. The extension provides convenient access to Fingerprint information and helps users keep up to date with the latest trends and changes on the marketplace.
 // @author       DAO Fingerprints
 // @match        https://getgems.io/collection/fingerprints*
 // @match        https://getgems.io/fingerprints*
+// @match        https://getgems.io/user*
 // @match        https://getgems.io/collection/EQATbIOeT9ziq7Jf76dJlnWIAiZggY2TeDteAh46D4QICBZj*
 // @icon         https://raw.githubusercontent.com/mir-one/fingerprints/main/site/index_files/1.jpg
 // @homepageURL  https://github.com/mir-one/fingerprints
@@ -61,7 +62,7 @@
                 $subtitle.setAttribute("done", "true");
             }
         }
-        setTimeout(updateUI, 5000);
+        setTimeout(updateUI, 1000);
     }
 
     function insertAfter(newNode, referenceNode) {
@@ -106,29 +107,208 @@
     addGlobalStyle(`
     @media (max-width: 5000px) {
       .NftPreview__wrap {
+        width: calc((100% - (16px * 7))/7);
+      }
+    @media (max-width: 1679px) {
+      .NftPreview__wrap {
         width: calc((100% - (16px * 6))/6);
       }
-    @media (max-width: 2000px) {
+    }
+    @media (max-width: 1411px) {
       .NftPreview__wrap {
         width: calc((100% - (16px * 5))/5);
       }
     }
-    @media (max-width: 1770px) {
+    @media (max-width: 1191px) {
       .NftPreview__wrap {
         width: calc((100% - (16px * 4))/4);
       }
     }
-    @media (max-width: 1550px) {
+    @media (max-width: 1000px) {
       .NftPreview__wrap {
-        width: calc((100% - (16px * 3))/3);
+        width: calc((100% - (16px * 5)) / 5);
+        #custom__rarity {
+      position: absolute;
+      top: -75px;
+      left: 16px;
+      text-align: left;
+      font-size: 15px;
+      color: #0098EA;
+      font-weight: 600;
+    }
+
+    #custom__text {
+      position: absolute;
+      top: -55px;
+      left: 16px;
+      text-align: left;
+      font-size: 14px;
+      color: #0098EA;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    #custom__floor {
+      position: absolute;
+      top: -30px;
+      left: 16px;
+      text-align: left;
+      color: #E5E5E5;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: -.006px;
+    }
       }
     }
-    @media (max-width: 1250px) {
+
+    .NftPreview__info {
+      position: relative;
+    }
+
+    .LibraryCaption--l-1 {
+    font-size: 10px;
+    line-height: 18px;
+    }
+
+    .NftPreview__subtitle_text {
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    }
+
+    .NftPreview__actions {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    bottom: calc(106px - 32px - 8px);
+    }
+    @media (max-width: 877px) {
       .NftPreview__wrap {
-        width: calc((100% - (16px * 2))/2);
+        width: calc((100% - (16px * 4)) / 4);
+        #custom__rarity {
+      position: absolute;
+      top: -75px;
+      left: 16px;
+      text-align: left;
+      font-size: 15px;
+      color: #0098EA;
+      font-weight: 600;
+    }
+
+    #custom__text {
+      position: absolute;
+      top: -55px;
+      left: 16px;
+      text-align: left;
+      font-size: 14px;
+      color: #0098EA;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    #custom__floor {
+      position: absolute;
+      top: -30px;
+      left: 16px;
+      text-align: left;
+      color: #E5E5E5;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: -.006px;
+    }
       }
     }
-    @media (max-width: 470px) {
+
+    .NftPreview__info {
+      position: relative;
+    }
+
+    .LibraryCaption--l-1 {
+    font-size: 10px;
+    line-height: 18px;
+    }
+
+    .NftPreview__subtitle_text {
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    }
+
+    .NftPreview__actions {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    bottom: calc(106px - 32px - 8px);
+    }
+    @media (max-width: 687px) {
+      .NftPreview__wrap {
+        width: calc((100% - (16px * 3)) / 3);
+        #custom__rarity {
+      position: absolute;
+      top: -75px;
+      left: 16px;
+      text-align: left;
+      font-size: 15px;
+      color: #0098EA;
+      font-weight: 600;
+    }
+
+    #custom__text {
+      position: absolute;
+      top: -55px;
+      left: 16px;
+      text-align: left;
+      font-size: 14px;
+      color: #0098EA;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    #custom__floor {
+      position: absolute;
+      top: -30px;
+      left: 16px;
+      text-align: left;
+      color: #E5E5E5;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: -.006px;
+    }
+      }
+    }
+
+    .NftPreview__info {
+      position: relative;
+    }
+
+    .LibraryCaption--l-1 {
+    font-size: 10px;
+    line-height: 18px;
+    }
+
+    .NftPreview__subtitle_text {
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    }
+
+    .NftPreview__actions {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    bottom: calc(106px - 32px - 8px);
+    }
+
+    @media (max-width: 513px) {
       .NftPreview__wrap {
         width: calc((100% - (16px * 2)) / 2);
         #custom__rarity {
@@ -136,7 +316,7 @@
       top: -75px;
       left: 16px;
       text-align: left;
-      font-size: 16px;
+      font-size: 15px;
       color: #0098EA;
       font-weight: 600;
     }
@@ -160,7 +340,7 @@
       color: #E5E5E5;
       font-size: 18px;
       font-weight: 600;
-      line-height: 18px;
+      line-height: 15px;
       letter-spacing: -.006px;
     }
       }
@@ -195,14 +375,14 @@
       top: 12px;
       right: 16px;
       text-align: right;
-      font-size: 16px;
+      font-size: 15px;
       color: #0098EA;
       font-weight: 600;
     }
 
     #custom__text {
       position: absolute;
-      top: 36px;
+      top: 2.2rem;
       right: 16px;
       text-align: right;
       font-size: 14px;
@@ -213,15 +393,30 @@
 
     #custom__floor {
       position: absolute;
-      bottom: 19px;
-      right: 16px;
+      bottom: 1.1rem;
+      right: 14px;
       text-align: right;
       color: #E5E5E5;
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 600;
       line-height: 18px;
       letter-spacing: -.006px;
-    }`);
+    }
 
+    .NftPreview__wrap--no-bg .NftPreview__actions {
+    right: 8px;
+    }
+
+    body[data-theme=dark] {
+    --accents_accent: #2188ff;
+    --background_content: #080a0b;
+    }
+
+    .Description {
+    word-wrap: break-word;
+    max-width: 1300px;
+    }
+
+    `);
     load();
 })();
