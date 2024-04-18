@@ -412,7 +412,12 @@
 
     body[data-theme=dark] {
     --accents_accent: #2188ff;
-    --background_content: #080a0b;
+    --background_content: #1E2337;
+    }
+
+    body[data-theme=light] {
+    --accents_accent: #2188ff;
+    --background_content: #F7F9FB;
     }
 
     .Description {
