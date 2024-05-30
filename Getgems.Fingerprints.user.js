@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TON Fingerprints
 // @namespace    http://fingerprints.ton
-// @version      0.0.1g
+// @version      0.0.1h
 // @description  A browser extension that allows you to display the TON Fingerprints collection on the Getgems NFT marketplace provides useful information about each NFT. For each Fingerprint, its recommended price, the degree of rarity and the DAO group to which it belongs are indicated. This information will help users better understand the value and uniqueness of each NFT, as well as make informed buying or selling decisions. The extension provides convenient access to Fingerprint information and helps users keep up to date with the latest trends and changes on the marketplace.
 // @author       DAO Fingerprints
 // @match        https://getgems.io/collection/fingerprints*
@@ -31,7 +31,7 @@
   }
 
   function updateUI() {
-    const $subtitles = [...document.querySelectorAll(".NftPreview__title")];
+    const $subtitles = [...document.querySelectorAll(".NftItemName")];
     console.log(`Adding details to ${$subtitles.length} NFT`);
     for (const $subtitle of $subtitles) {
       if (
@@ -396,7 +396,7 @@
 
     #custom__floor {
       position: absolute;
-      bottom: 1.1rem;
+      bottom: 0.9rem;
       right: 14px;
       text-align: right;
       color: #E5E5E5;
