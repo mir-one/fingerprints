@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TON Fingerprints
 // @namespace    http://fingerprints.ton
-// @version      0.0.1h
+// @version      0.0.1i
 // @description  A browser extension that allows you to display the TON Fingerprints collection on the Getgems NFT marketplace provides useful information about each NFT. For each Fingerprint, its recommended price, the degree of rarity and the DAO group to which it belongs are indicated. This information will help users better understand the value and uniqueness of each NFT, as well as make informed buying or selling decisions. The extension provides convenient access to Fingerprint information and helps users keep up to date with the latest trends and changes on the marketplace.
 // @author       DAO Fingerprints
 // @match        https://getgems.io/collection/fingerprints*
@@ -132,7 +132,6 @@
         width: calc((100% - (16px * 5)) / 5);
         #custom__rarity {
       position: absolute;
-      top: -75px;
       left: 16px;
       text-align: left;
       font-size: 15px;
@@ -141,10 +140,9 @@
     }
 
     #custom__text {
-      position: absolute;
-      top: -55px;
-      left: 16px;
-      text-align: left;
+      top: -60px;
+      position: relative;
+      text-align: center;
       font-size: 14px;
       color: #0098EA;
       font-weight: 500;
@@ -193,7 +191,6 @@
         width: calc((100% - (16px * 4)) / 4);
         #custom__rarity {
       position: absolute;
-      top: -75px;
       left: 16px;
       text-align: left;
       font-size: 15px;
@@ -202,10 +199,9 @@
     }
 
     #custom__text {
-      position: absolute;
-      top: -55px;
-      left: 16px;
-      text-align: left;
+      top: -60px;
+      position: relative;
+      text-align: center;
       font-size: 14px;
       color: #0098EA;
       font-weight: 500;
@@ -254,7 +250,6 @@
         width: calc((100% - (16px * 3)) / 3);
         #custom__rarity {
       position: absolute;
-      top: -75px;
       left: 16px;
       text-align: left;
       font-size: 15px;
@@ -263,10 +258,9 @@
     }
 
     #custom__text {
-      position: absolute;
-      top: -55px;
-      left: 16px;
-      text-align: left;
+      top: -60px;
+      position: relative;
+      text-align: center;
       font-size: 14px;
       color: #0098EA;
       font-weight: 500;
@@ -316,7 +310,6 @@
         width: calc((100% - (16px * 2)) / 2);
         #custom__rarity {
       position: absolute;
-      top: -75px;
       left: 16px;
       text-align: left;
       font-size: 15px;
@@ -325,10 +318,9 @@
     }
 
     #custom__text {
-      position: absolute;
-      top: -55px;
-      left: 16px;
-      text-align: left;
+      top: -60px;
+      position: relative;
+      text-align: center;
       font-size: 14px;
       color: #0098EA;
       font-weight: 500;
@@ -375,7 +367,6 @@
 
     #custom__rarity {
       position: absolute;
-      top: 12px;
       right: 16px;
       text-align: right;
       font-size: 15px;
@@ -384,10 +375,9 @@
     }
 
     #custom__text {
-      position: absolute;
-      top: 2.2rem;
-      right: 16px;
-      text-align: right;
+      top: -60px;
+      position: relative;
+      text-align: center;
       font-size: 14px;
       color: #0098EA;
       font-weight: 500;
